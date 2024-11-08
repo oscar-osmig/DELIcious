@@ -38,37 +38,25 @@ public class Sandwhich {
     }
 
 
-    public BreadSize getSize() {
-        return size;
-    }
+    public BreadSize getSize() {return size;}
 
-    public void setSize(BreadSize size) {
-        this.size = size;
-    }
+    public void setSize(BreadSize size) {this.size = size;}
 
-    public BreadTypes getBreadType() {
-        return breadType;
-    }
+    public BreadTypes getBreadType() {return breadType;}
 
-    public void setBreadType(BreadTypes breadType) {
-        this.breadType = breadType;
-    }
+    public void setBreadType(BreadTypes breadType) {this.breadType = breadType;}
 
-    public boolean isToasted() {
-        return isToasted;
-    }
+    public boolean isToasted() {return isToasted;}
 
-    public void setToasted(boolean toasted) {
-        isToasted = toasted;
-    }
+    public void setToasted(boolean toasted) {isToasted = toasted;}
 
-    public List<RegularTopping> getRegularToppings() {
-        return regularToppings;
-    }
+    public List<RegularTopping> getRegularToppings() {return regularToppings;}
 
-    public void setRegularToppings(List<RegularTopping> regularToppings) {
-        this.regularToppings = regularToppings;
-    }
+    public List<PremiumTopping> getPremiumToppings() {return premiumToppings;}
+
+    public void setPremiumToppings(List<PremiumTopping> premiumToppings) {this.premiumToppings = premiumToppings;}
+
+    public void setRegularToppings(List<RegularTopping> regularToppings) {this.regularToppings = regularToppings;}
 
     @Override
     public String toString() {

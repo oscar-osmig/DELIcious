@@ -3,11 +3,11 @@ package com.pluralsight.toppings;
 import com.pluralsight.enums.*;
 
 public class PremiumTopping extends Topping{
-    private PremiumToppings premiumTopping;
+    private PremiumToppingName premiumTopping;
     private BreadSize breadSize;
 
 
-    public PremiumTopping(PremiumToppings premiumTopping, BreadSize breadSize) {
+    public PremiumTopping(PremiumToppingName premiumTopping, BreadSize breadSize) {
         this.premiumTopping = premiumTopping;
         this.breadSize = breadSize;
     }
@@ -23,11 +23,11 @@ public class PremiumTopping extends Topping{
     }
 
 
-    public PremiumToppings getPremiumTopping() {
+    public PremiumToppingName getPremiumTopping() {
         return premiumTopping;
     }
 
-    public void setPremiumTopping(PremiumToppings premiumTopping) {
+    public void setPremiumTopping(PremiumToppingName premiumTopping) {
         this.premiumTopping = premiumTopping;
     }
 

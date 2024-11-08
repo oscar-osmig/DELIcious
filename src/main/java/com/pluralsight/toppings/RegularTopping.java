@@ -2,17 +2,17 @@ package com.pluralsight.toppings;
 import com.pluralsight.enums.*;
 
 public class RegularTopping extends Topping{
-    private RegularToppings regularTopping;
+    private RegularToppingName regularTopping;
 
-    public RegularTopping(RegularToppings regularTopping) {
+    public RegularTopping(RegularToppingName regularTopping) {
         this.regularTopping = regularTopping;
     }
 
-    public RegularToppings getRegularTopping() {
+    public RegularToppingName getRegularTopping() {
         return regularTopping;
     }
 
-    public void setRegularTopping(RegularToppings regularTopping) {
+    public void setRegularTopping(RegularToppingName regularTopping) {
         this.regularTopping = regularTopping;
     }
 

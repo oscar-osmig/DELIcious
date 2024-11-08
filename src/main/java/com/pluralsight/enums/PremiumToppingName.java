@@ -1,8 +1,6 @@
 package com.pluralsight.enums;
 
-import com.pluralsight.toppings.PremiumTopping;
-
-public enum PremiumToppings {
+public enum PremiumToppingName {
     STEAK("meat"),
     HAM("meat"),
     SALAMI("meat"),
@@ -19,7 +17,7 @@ public enum PremiumToppings {
     public String getType() {
         return type;
     }
-    PremiumToppings(String type) {
+    PremiumToppingName(String type) {
         this.type = type;
     }
 
