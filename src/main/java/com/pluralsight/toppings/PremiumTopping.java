@@ -2,11 +2,7 @@ package com.pluralsight.toppings;
 
 import com.pluralsight.enums.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
-
-public class PremiumTopping {
+public class PremiumTopping extends Topping{
     private PremiumToppings premiumTopping;
     private BreadSize breadSize;
 

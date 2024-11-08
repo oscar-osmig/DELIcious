@@ -1,7 +1,7 @@
 package com.pluralsight.toppings;
 import com.pluralsight.enums.*;
 
-public class RegularTopping {
+public class RegularTopping extends Topping{
     private RegularToppings regularTopping;
 
     public RegularTopping(RegularToppings regularTopping) {

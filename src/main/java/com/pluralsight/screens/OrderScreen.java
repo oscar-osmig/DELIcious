@@ -4,6 +4,7 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppings;
 import com.pluralsight.enums.RegularToppings;
+import com.pluralsight.otherProducts.OtherProducts;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
@@ -15,6 +16,7 @@ import java.util.Scanner;
 public class OrderScreen {
     private static final Scanner scanner = new Scanner(System.in);
     public static List<Sandwhich> sandwhiches = new ArrayList<>();
+    public static List<OtherProducts> otherProducts = new ArrayList<>();
     private static boolean isToasted = false;
     public static void orderScreen(){
         System.out.println("--- ORDER SCREEN ---");
@@ -53,13 +55,11 @@ public class OrderScreen {
 
 
     private static String getChoice(){
-        System.out.println("Your choice: ");
+        System.out.print("Your choice: ");
         return scanner.nextLine();
     }
 
     public static void makeSandwichOrder() {
-       // Sandwhich sandwhich = new Sandwhich();
-
 
         BreadTypes breadTypes = getBreadType();
         //System.out.println(breadTypes);
@@ -78,8 +78,9 @@ public class OrderScreen {
 
 
         sandwhiches.add(new Sandwhich(breadSize, breadTypes, isToasted, regularToppings, premiumToppings));
-        System.out.println(sandwhiches);
+        System.out.println(sandwhiches.getFirst());
 
+       channel();
 
     }
 
@@ -271,7 +272,6 @@ public class OrderScreen {
 
         return breadSize;
     }
-
 
     private static void cancelOrder() {
         DELIcious.channel();

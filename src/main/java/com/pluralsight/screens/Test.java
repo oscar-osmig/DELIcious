@@ -1,7 +1,5 @@
 package com.pluralsight.screens;
 
-
-
 import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppings;
@@ -9,15 +7,31 @@ import com.pluralsight.enums.RegularToppings;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
+import com.pluralsight.toppings.Topping;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
 public class Test {
     public static void main(String[] args) {
+        List<Topping> toppings = new ArrayList<>();
+        toppings.add(new PremiumTopping(PremiumToppings.SWISS, BreadSize.FOUR_INCH));
+        toppings.add(new RegularTopping(RegularToppings.VINAIGRETTE));
+
+        if (toppings.get(1) instanceof RegularTopping){
+            System.out.println(toppings.getFirst());
+        }
+
         System.out.println();
+
+
+    }
+
+    public static void makeSandwich(){
+        System.out.println();
+
+
         List<RegularTopping> regularTopping = new ArrayList<>();
         regularTopping.add(new RegularTopping(RegularToppings.MAYO));
         regularTopping.add(new RegularTopping(RegularToppings.CUCUMBERS));
