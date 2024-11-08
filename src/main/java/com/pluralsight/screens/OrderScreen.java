@@ -48,5 +48,20 @@ public class OrderScreen {
 
     public static void makeOrder() {
 
+
+    }
+
+    private static void toasted() {
+    }
+
+    private static void chooseToppings() {
+    }
+
+    private static void sandwhichSized() {
+    }
+
+    private static void selectSize() {
+        System.out.println("Available sizes: \n" + "1. 4\"" + "2. 8\""
+                );
     }
 }

@@ -9,5 +9,13 @@ public enum RegularToppings {
     CUCUMBERS,
     PICKLES,
     GUACAMOLE,
-    MUSHROOMS
+    MUSHROOMS,
+    AU_JUS,
+    SAUCE,
+    MAYO,
+    MUSTARD,
+    KETCHUP,
+    RANCH,
+    THOUSAND_ISLAND,
+    VINAIGRETTE
 }
