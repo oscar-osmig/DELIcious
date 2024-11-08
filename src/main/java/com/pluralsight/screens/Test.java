@@ -30,8 +30,6 @@ public class Test {
 
     public static void makeSandwich(){
         System.out.println();
-
-
         List<RegularTopping> regularTopping = new ArrayList<>();
         regularTopping.add(new RegularTopping(RegularToppings.MAYO));
         regularTopping.add(new RegularTopping(RegularToppings.CUCUMBERS));

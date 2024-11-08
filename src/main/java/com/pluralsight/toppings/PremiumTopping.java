@@ -13,12 +13,12 @@ public class PremiumTopping extends Topping{
     }
 
     public double getToppingPrice(){
-        if (breadSize == BreadSize.FOUR_INCH ){
-            return 5.50;
-        } else if (breadSize == BreadSize.EIGHT_INCH) {
-            return 7.00;
+        if (breadSize == BreadSize.FOUR_INCH && premiumTopping.getType().equals("meat")){
+            return 1.0;
+        } else if (breadSize == BreadSize.EIGHT_INCH && premiumTopping.getType().equals("meat")) {
+            return 2.0;
         }else {
-            return 8.50;
+            return 3.0;
         }
     }
 
