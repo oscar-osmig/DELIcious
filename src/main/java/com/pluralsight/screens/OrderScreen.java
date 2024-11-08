@@ -4,6 +4,7 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppings;
 import com.pluralsight.enums.RegularToppings;
+import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
 
@@ -13,6 +14,8 @@ import java.util.Scanner;
 
 public class OrderScreen {
     private static final Scanner scanner = new Scanner(System.in);
+    public static List<Sandwhich> sandwhiches = new ArrayList<>();
+    private static boolean isToasted = false;
     public static void orderScreen(){
         System.out.println("--- ORDER SCREEN ---");
         System.out.println("""
@@ -71,8 +74,16 @@ public class OrderScreen {
         System.out.println();
 
         List<RegularTopping> regularToppings = getRegularToppings(breadSize);
-        System.out.println(regularToppings);
+        //System.out.println(regularToppings);
+
+
+        sandwhiches.add(new Sandwhich(breadSize, breadTypes, isToasted, regularToppings, premiumToppings));
+        System.out.println(sandwhiches);
+
+
     }
+
+
 
     private static List<RegularTopping> getRegularToppings(BreadSize breadSize) {
         boolean running = true;
@@ -107,11 +118,53 @@ public class OrderScreen {
             String add = scanner.nextLine();
             if (!add.equalsIgnoreCase("")){
                 System.out.println("\nInteresting choices, now choose the sauce!");
+                getSauce(regularToppings);
                 running = false;
             }
         }while (running) ;
 
             return regularToppings;
+    }
+
+    private static void getSauce(List<RegularTopping> regularToppings) {
+        boolean running = true;
+        System.out.println("-- SAUCE");
+        System.out.println("\n 1. Mayo \n 2. Mustard \n 3. Ketchup \n 4. Ranch \n 5. Thousand Island " +
+                "\n 6. Vinaigrette \n 7. Au Jus (side) \n 8. sauce (side)");
+        String choice;
+        int count = 0;
+
+        do {
+            System.out.print("\nAdd Sauce: ");
+            choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> regularToppings.add(new RegularTopping(RegularToppings.MAYO));
+                case "2" -> regularToppings.add(new RegularTopping(RegularToppings.MUSTARD));
+                case "3" -> regularToppings.add(new RegularTopping(RegularToppings.KETCHUP));
+                case "4" -> regularToppings.add(new RegularTopping(RegularToppings.RANCH));
+                case "5" -> regularToppings.add(new RegularTopping(RegularToppings.THOUSAND_ISLAND));
+                case "6" -> regularToppings.add(new RegularTopping(RegularToppings.VINAIGRETTE));
+                case "7" -> regularToppings.add(new RegularTopping(RegularToppings.AU_JUS));
+                case "8" -> regularToppings.add(new RegularTopping(RegularToppings.SAUCE));
+                default -> {
+                    System.out.println("Please choice a valid option");
+                    continue;
+                }
+            }
+
+            if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
+            else if (count == 1) { System.out.print(">> ");}
+
+            String add = scanner.nextLine();
+            if (!add.equalsIgnoreCase("")){
+                System.out.print("\nLastly would you like the sandwich toasted? (y/n) ");
+                String toasted = scanner.nextLine();
+                isToasted = toasted.equalsIgnoreCase("y");
+                System.out.println("\nAwesome we'll prepare your sandwich right away!");
+                running = false;
+            }
+        }while (running);
+
     }
 
     private static List<PremiumTopping> getPremiumToppings(BreadSize breadSize){
