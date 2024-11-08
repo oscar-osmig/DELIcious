@@ -28,7 +28,7 @@ public class OrderScreen {
         String choice = scanner.nextLine();
         switch (choice) {
             case "1" -> SandwichScreen.makeSandwichOrder();
-            case "2", "3" -> addOtherProduct();
+            case "2", "3" -> AddOtherScreen.addOtherProduct();
             case "4" -> checkOut();
             case "0" -> cancelOrder();
         }
@@ -36,11 +36,6 @@ public class OrderScreen {
 
     private static void checkOut() {
     }
-
-    private static void addOtherProduct() {
-    }
-
-
 
     private static void cancelOrder() {
         DELIcious.channel();
