@@ -71,6 +71,7 @@ public class OrderScreen {
         System.out.println();
 
         List<RegularTopping> regularToppings = getRegularToppings(breadSize);
+        System.out.println(regularToppings);
     }
 
     private static List<RegularTopping> getRegularToppings(BreadSize breadSize) {
@@ -78,7 +79,8 @@ public class OrderScreen {
         List<RegularTopping> regularToppings = new ArrayList<>();
 
         System.out.println("--- REGULAR TOPPING ---");
-        System.out.println("\n 1. Cucumber \n 2. Ham \n 3. Salami \n 4. Roast Beef \n 5. Chicken \n 6. Bacon");
+        System.out.println("\n 1. Cucumber \n 2. Pepper \n 3. Onions \n 4. Lettuce \n 5. Tomatoes \n 6. Jalapenos" +
+                          "\n 7. Pickles \n 8. Guacamole \n 9. Mushrooms");
         String choice;
         int count = 0;
         do {
