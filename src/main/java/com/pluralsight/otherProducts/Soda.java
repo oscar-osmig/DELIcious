@@ -17,7 +17,7 @@ public class Soda extends Drinks{
         if (this.size.equalsIgnoreCase("S")){
             return 2.0;
         } else if (this.size.equalsIgnoreCase("M")) {
-            return 2.50;
+            return 2.5;
         } else if (this.size.equalsIgnoreCase("L")) {
             return 3.0;
         }else {

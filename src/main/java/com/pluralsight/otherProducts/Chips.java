@@ -26,4 +26,12 @@ public class Chips extends OtherProducts {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Chips{" +
+                "name='" + name + '\'' +
+                ", size='" + size + '\'' +
+                '}';
+    }
 }

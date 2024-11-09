@@ -1,8 +1,7 @@
-package com.pluralsight.receipt;
+package com.pluralsight.order;
 
 import com.pluralsight.otherProducts.Chips;
 import com.pluralsight.otherProducts.Drinks;
-import com.pluralsight.otherProducts.OtherProducts;
 import com.pluralsight.sandwhich.Sandwhich;
 
 import java.util.ArrayList;
@@ -41,5 +40,14 @@ public class Order {
 
     public void setChipsList(List<Chips> chipsList) {
         this.chipsList = chipsList;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "sandwhiches=" + sandwhiches +
+                ", drinksList=" + drinksList +
+                ", chipsList=" + chipsList +
+                '}';
     }
 }

@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class DrinksScreen {
     static Scanner scanner = new Scanner(System.in);
-    static List<Drinks> drinksList = new ArrayList<>();
-    private static double drinksCost;
+    public static List<Drinks> drinksList = new ArrayList<>();
+    public static double drinksCost = 0;
 
     private static String getChoice(String text){
         System.out.print(text);
@@ -44,7 +44,7 @@ public class DrinksScreen {
             switch (choice){
                 case "1" -> {
                     drinksList.add(new OrangeJuice("S"));
-                    drinksCost += 2;
+                    drinksCost += 2.0;
                 }
                 case "2" -> {
                     drinksList.add(new OrangeJuice("M"));
@@ -52,18 +52,18 @@ public class DrinksScreen {
                 }
                 case "3" -> {
                     drinksList.add(new OrangeJuice("L"));
-                    drinksCost += 3;
+                    drinksCost += 3.0;
                 }
                 case "0" -> {
                     running = false;
-                    printDrinks();
+                    printDrinks(drinksList);
                     addDrink();
                 }
             }
         }while (running);
     }
 
-    private static void printDrinks() {
+    public static void printDrinks(List<Drinks> drinksList) {
         System.out.println("------------ DRINKS ORDERED ------------");
         for (Drinks drink : drinksList){
             if (drink instanceof Soda){
@@ -79,8 +79,8 @@ public class DrinksScreen {
             } else if (drink instanceof OrangeJuice) {
                 System.out.println("Orange Juice: \n" +
                         "    -- Size: " + ((OrangeJuice) drink).getSize() + "\n" +
-                        "    -- Flavor: orange?..." +
-                        "    -- Calories: 80 cal" +
+                        "    -- Flavor: orange?..." + "\n" +
+                        "    -- Calories: 80 cal" + "\n" +
                         "    -- Price: " + ((OrangeJuice) drink).getPrice() + "\n" );
 
             }
@@ -100,7 +100,7 @@ public class DrinksScreen {
                 case "1" -> {
                     String size = getSodaSize();
                     drinksList.add(new Soda("Coke", "Original", 140, size));
-                    drinksCost += 2;
+                    drinksCost += 2.0;
                 }
                 case "2" -> {
                     String size = getSodaSize();
@@ -110,7 +110,7 @@ public class DrinksScreen {
                 case "3" -> {
                     String size = getSodaSize();
                     drinksList.add(new Soda("Pepsi", "Original", 180, size));
-                    drinksCost += 3;
+                    drinksCost += 3.0;
                 }
                 case "0" -> {
                     running = false;

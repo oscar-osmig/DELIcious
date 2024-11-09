@@ -30,15 +30,12 @@ public class OrderScreen {
             case "1" -> SandwichScreen.makeSandwichOrder();
             case "2" -> DrinksScreen.addDrink();
             case "3" -> ChipsScreen.addShips();
-            case "4" -> checkOut();
+            case "4" -> CheckoutScreen.checkOut();
             case "0" -> cancelOrder();
         }
     }
 
-    private static void checkOut() {
-    }
-
-    private static void cancelOrder() {
+    public static void cancelOrder() {
         DELIcious.channel();
     }
 

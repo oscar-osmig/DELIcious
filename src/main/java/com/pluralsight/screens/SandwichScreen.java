@@ -15,10 +15,10 @@ import java.util.Scanner;
 
 public class SandwichScreen {
     public static List<Sandwhich> sandwhiches = new ArrayList<>();
-    public static List<OtherProducts> otherProducts = new ArrayList<>();
 
     private static boolean isToasted = false;
     private static final Scanner scanner = new Scanner(System.in);
+    public static double totalSandwichCost = 0;
 
     private static String getChoice(){
         System.out.print("Your choice: ");
@@ -51,7 +51,7 @@ public class SandwichScreen {
 
     }
 
-    private static void printSandwich(List<Sandwhich> sandwhiches) {
+    public static void printSandwich(List<Sandwhich> sandwhiches) {
         /*                --- DElIcious ---
         sandwich:
                 Bread Type:  %s %s %s %s
@@ -137,7 +137,8 @@ public class SandwichScreen {
         }
     }
 
-    private static double printTotal(int i) {
+    public static double printTotal(int i) {
+        totalSandwichCost += sandwhiches.get(i).calculateSandwichCost();
         return sandwhiches.get(i).calculateSandwichCost();
 
     }

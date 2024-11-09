@@ -3,7 +3,7 @@ package com.pluralsight.screens;
 import java.util.Scanner;
 
 public class DELIcious{
-    private static Scanner scanner = new Scanner(System.in);
+
     private static boolean running = true;
 
     public static void main(String[] args) {
@@ -11,6 +11,7 @@ public class DELIcious{
     }
 
     public static void channel(){
+        Scanner scanner = new Scanner(System.in);
         do {
             homeScreenMenu();
             System.out.print("Your choice: ");

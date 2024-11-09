@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ChipsScreen {
-    private static List<Chips> chipsList = new ArrayList<>();
+    public static List<Chips> chipsList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
-    private static double chipsCost = 0;
+    public static double chipsCost = 0;
 
     private static String getChoice(String text){
         System.out.print(text);
@@ -55,7 +55,7 @@ public class ChipsScreen {
                 }
                 case "0" -> {
                     running = false;
-                    printChips();
+                    printChips(chipsList);
                     addShips();
                 }
             }
@@ -82,14 +82,14 @@ public class ChipsScreen {
                 }
                 case "0" -> {
                     running = false;
-                    printChips();
+                    printChips(chipsList);
                     addShips();
                 }
             }
         }while (running);
     }
 
-    public static void printChips(){
+    public static void printChips(List<Chips> chipsList){
         System.out.println("------------ CHIPS ORDERED ------------");
         for (Chips chips : chipsList){
             if (chips instanceof SunChips){
