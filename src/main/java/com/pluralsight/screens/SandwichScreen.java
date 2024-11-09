@@ -79,8 +79,8 @@ public class SandwichScreen {
                          "    -- Bread Size: " + sandwhiches.get(i).getSize() + "\n" +
                          "-----------------------------------------------------------------\n" +
                          "    -- Premium Toppings:" + "\n" +
-                         "    -- Meats: " + getMeat(i) + "\n" +
-                         "    -- Cheese: " + getCheeses(i) + "\n" +
+                         "    -- Meats: " + "\n" + "             " + getMeat(i) + "\n" +
+                         "    -- Cheese: " + "\n" + "             " + getCheeses(i) + "\n" +
                          "-----------------------------------------------------------------\n" +
                          "    -- Regular Toppings: " + "\n" + "             " + printRegularToppings(i) + "\n" +
                          "-----------------------------------------------------------------\n" +

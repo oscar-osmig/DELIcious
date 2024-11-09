@@ -28,7 +28,8 @@ public class OrderScreen {
         String choice = scanner.nextLine();
         switch (choice) {
             case "1" -> SandwichScreen.makeSandwichOrder();
-            case "2", "3" -> AddOtherScreen.addOtherProduct();
+            case "2" -> AddOtherScreen.addDrink();
+            case "3" -> AddOtherScreen.addShips();
             case "4" -> checkOut();
             case "0" -> cancelOrder();
         }
