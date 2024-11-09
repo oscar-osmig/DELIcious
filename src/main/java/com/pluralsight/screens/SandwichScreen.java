@@ -48,7 +48,7 @@ public class SandwichScreen {
         //System.out.println(sandwhiches.getFirst());
         printSandwich(sandwhiches);
         OrderScreen.orders.add(new SandwichOrder(sandwhiches));
-        System.out.println(OrderScreen.orders);
+        //System.out.println(OrderScreen.orders);
         OrderScreen.channel();
 
     }
@@ -72,7 +72,7 @@ public class SandwichScreen {
                 --------------------------------
          */
         for (int i = 0; i < sandwhiches.size(); i++){
-            System.out.print("              ------         Sandwich " + (i+1) + "      ------             \n" +
+            System.out.print("\n              ------         Sandwich " + (i+1) + "      ------             \n" +
                          "-----------------------------------------------------------------\n" +
                          "    -- Toasted: " + (sandwhiches.get(i).isToasted() ? "    Yes\n" : "    No\n") +
                          "-----------------------------------------------------------------\n" +
@@ -97,7 +97,7 @@ public class SandwichScreen {
 
     }
 
-    private static String printSide(int i) {
+    public static String printSide(int i) {
         List<RegularTopping> premiumToppings = sandwhiches.get(i).getRegularToppings();
         StringBuilder sides = new StringBuilder();
         int counter = 1;
@@ -118,7 +118,7 @@ public class SandwichScreen {
         }
     }
 
-    private static String printSauce(int i) {
+    public static String printSauce(int i) {
         List<RegularTopping> premiumToppings = sandwhiches.get(i).getRegularToppings();
         StringBuilder sauces = new StringBuilder();
         int counter = 1;
@@ -145,7 +145,7 @@ public class SandwichScreen {
 
     }
 
-    private static String printRegularToppings(int i) {
+    public static String printRegularToppings(int i) {
         List<RegularTopping> premiumToppings = sandwhiches.get(i).getRegularToppings();
         StringBuilder regular = new StringBuilder();
         int counter = 1;
@@ -167,7 +167,7 @@ public class SandwichScreen {
         }
     }
 
-    private static String getCheeses(int i) {
+    public static String getCheeses(int i) {
         List<PremiumTopping> premiumToppings = sandwhiches.get(i).getPremiumToppings();
         StringBuilder cheeses = new StringBuilder();
         int counter = 1;

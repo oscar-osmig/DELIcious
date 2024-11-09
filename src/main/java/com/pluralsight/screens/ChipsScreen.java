@@ -28,7 +28,7 @@ public class ChipsScreen {
                 case "2" -> addDoritos();
                 case "3" -> {
                     OrderScreen.orders.add(new ChipsOrder(chipsList));
-                    System.out.println(OrderScreen.orders);
+                    //System.out.println(OrderScreen.orders);
                     running = false;
                     OrderScreen.channel();
                 }

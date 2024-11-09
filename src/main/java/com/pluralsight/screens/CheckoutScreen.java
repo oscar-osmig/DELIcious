@@ -24,36 +24,6 @@ public class CheckoutScreen {
         //System.out.println(order);
         if (!orders.isEmpty()) {
             GenerateReceipt.generateReceipt(orders);
-            System.out.println("\nEnter 'Y' to confirm, 'N' to go back, and 0 to cancel order");
-            boolean running = true;
-            do {
-
-                String choice = getChoice("Confirm? ");
-                switch (choice) {
-                    case "Y", "y" -> {
-                            System.out.println("Do you want to make a new order? (y/n)");
-                            String answer = getChoice("Your Answer: ");
-                            switch (answer) {
-                                case "y", "Y" -> OrderScreen.channel();
-                                case "N", "n" -> {
-                                    System.out.println("Good bye!");
-                                    return;
-                                }
-                                case "0", "o", "O" -> {
-                                    OrderScreen.cancelOrder();
-                                }
-                                default -> System.out.println("* Please answer valid options *");
-                            }
-                    }
-
-                    case "n", "N" -> OrderScreen.channel();
-                    case "0", "o", "O" -> {
-                        Thread.sleep(5);
-                        DELIcious.channel();
-                    }
-                    default -> System.out.println("\n * Please choose valid option * \n");
-                }
-            } while (true);
 
         }
 

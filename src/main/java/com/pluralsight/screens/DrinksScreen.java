@@ -29,7 +29,7 @@ public class DrinksScreen {
                 case "2" -> addJuice();
                 case "3" -> {
                     OrderScreen.orders.add(new DrinksOrder(drinksList));
-                    System.out.println(OrderScreen.orders);
+                    //System.out.println(OrderScreen.orders);
                     printDrinks(drinksList);
                     running = false;
                     OrderScreen.channel();
