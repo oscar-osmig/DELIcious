@@ -1,5 +1,7 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.order.ChipsOrder;
+import com.pluralsight.order.Order;
 import com.pluralsight.otherProducts.*;
 
 import java.util.ArrayList;
@@ -16,7 +18,7 @@ public class ChipsScreen {
         return scanner.nextLine();
     }
 
-    static void addShips() {
+    static void addShips() throws InterruptedException {
         boolean running = true;
         System.out.println("\n--- ORDER CHIPS --- \n 1. Sun Chips \n 2. Doritos \n 3. Back");
         do {
@@ -25,6 +27,8 @@ public class ChipsScreen {
                 case "1" -> addSunChips();
                 case "2" -> addDoritos();
                 case "3" -> {
+                    OrderScreen.orders.add(new ChipsOrder(chipsList));
+                    System.out.println(OrderScreen.orders);
                     running = false;
                     OrderScreen.channel();
                 }
@@ -35,7 +39,7 @@ public class ChipsScreen {
 
     }
 
-    private static void addDoritos() {
+    private static void addDoritos() throws InterruptedException {
         boolean running = true;
         System.out.println( "\n-- Doritos Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
         do {
@@ -62,7 +66,7 @@ public class ChipsScreen {
         }while (running);
     }
 
-    private static void addSunChips() {
+    private static void addSunChips() throws InterruptedException {
         boolean running = true;
         System.out.println( "\n-- Sun Chips Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
         do {

@@ -1,5 +1,7 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.order.DrinksOrder;
+import com.pluralsight.order.Order;
 import com.pluralsight.otherProducts.*;
 
 import java.util.ArrayList;
@@ -8,16 +10,16 @@ import java.util.Scanner;
 
 
 public class DrinksScreen {
-    static Scanner scanner = new Scanner(System.in);
     public static List<Drinks> drinksList = new ArrayList<>();
     public static double drinksCost = 0;
 
     private static String getChoice(String text){
+        Scanner scanner = new Scanner(System.in);
         System.out.print(text);
         return scanner.nextLine();
     }
 
-    static void addDrink(){
+    static void addDrink() throws InterruptedException {
         boolean running = true;
         System.out.println("\n--- ORDER DRINK --- \n 1. Soda \n 2. Orange Juice \n 3. Back");
         do {
@@ -26,6 +28,9 @@ public class DrinksScreen {
                 case "1" -> addSoda();
                 case "2" -> addJuice();
                 case "3" -> {
+                    OrderScreen.orders.add(new DrinksOrder(drinksList));
+                    System.out.println(OrderScreen.orders);
+                    printDrinks(drinksList);
                     running = false;
                     OrderScreen.channel();
                 }
@@ -36,7 +41,7 @@ public class DrinksScreen {
 
     }
 
-    private static void addJuice() {
+    private static void addJuice() throws InterruptedException {
         boolean running = true;
         System.out.println( "\n-- Orange Juice Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
         do {
@@ -56,9 +61,9 @@ public class DrinksScreen {
                 }
                 case "0" -> {
                     running = false;
-                    printDrinks(drinksList);
                     addDrink();
                 }
+                default -> System.out.println("* Please choose valid option *");
             }
         }while (running);
     }
@@ -88,7 +93,7 @@ public class DrinksScreen {
         System.out.println("---- Drinks Cost: " + drinksCost + "\n");
     }
 
-    static void addSoda(){
+    static void addSoda() throws InterruptedException {
         boolean running = true;
         System.out.println("\n--- ORDER DRINK --- \n1. Coke (original flavor, 140 cal, S M L)" +
                 "\n2. Fanta (orange flavor, 150 cal)" +

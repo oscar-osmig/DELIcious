@@ -4,6 +4,8 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
+import com.pluralsight.order.Order;
+import com.pluralsight.order.SandwichOrder;
 import com.pluralsight.otherProducts.OtherProducts;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
@@ -15,17 +17,16 @@ import java.util.Scanner;
 
 public class SandwichScreen {
     public static List<Sandwhich> sandwhiches = new ArrayList<>();
-
     private static boolean isToasted = false;
-    private static final Scanner scanner = new Scanner(System.in);
     public static double totalSandwichCost = 0;
 
-    private static String getChoice(){
-        System.out.print("Your choice: ");
+    private static String getChoice(String txt){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(txt);
         return scanner.nextLine();
     }
 
-    public static void makeSandwichOrder() {
+    public static void makeSandwichOrder() throws InterruptedException {
 
         BreadTypes breadTypes = getBreadType();
         //System.out.println(breadTypes);
@@ -46,7 +47,8 @@ public class SandwichScreen {
         sandwhiches.add(new Sandwhich(breadSize, breadTypes, isToasted, regularToppings, premiumToppings));
         //System.out.println(sandwhiches.getFirst());
         printSandwich(sandwhiches);
-
+        OrderScreen.orders.add(new SandwichOrder(sandwhiches));
+        System.out.println(OrderScreen.orders);
         OrderScreen.channel();
 
     }
@@ -215,11 +217,11 @@ public class SandwichScreen {
         System.out.println("--- REGULAR TOPPING ---");
         System.out.println("\n 1. Cucumber \n 2. Pepper \n 3. Onions \n 4. Lettuce \n 5. Tomatoes \n 6. Jalapenos" +
                 "\n 7. Pickles \n 8. Guacamole \n 9. Mushrooms");
-        String choice;
+
         int count = 0;
         do {
-            System.out.print("\nAdd topping: ");
-            choice = scanner.nextLine();
+
+            String choice = getChoice("\nAdd topping: ");
             switch (choice) {
                 case "1" -> regularToppings.add(new RegularTopping(RegularToppingName.CUCUMBERS));
                 case "2" -> regularToppings.add(new RegularTopping(RegularToppingName.PEPPERS));
@@ -238,7 +240,7 @@ public class SandwichScreen {
             if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
             else if (count == 1) { System.out.print(">> ");}
 
-            String add = scanner.nextLine();
+            String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
                 System.out.println("\nInteresting choices, now choose the sauce!");
                 getSauce(regularToppings);
@@ -254,12 +256,12 @@ public class SandwichScreen {
         System.out.println("-- SAUCE");
         System.out.println("\n 1. Mayo \n 2. Mustard \n 3. Ketchup \n 4. Ranch \n 5. Thousand Island " +
                 "\n 6. Vinaigrette \n 7. Au Jus (side) \n 8. sauce (side)");
-        String choice;
+
         int count = 0;
 
         do {
-            System.out.print("\nAdd Sauce: ");
-            choice = scanner.nextLine();
+
+            String choice = getChoice("\nAdd Sauce: ");
             switch (choice) {
                 case "1" -> regularToppings.add(new RegularTopping(RegularToppingName.MAYO));
                 case "2" -> regularToppings.add(new RegularTopping(RegularToppingName.MUSTARD));
@@ -278,13 +280,13 @@ public class SandwichScreen {
             if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
             else if (count == 1) { System.out.print(">> ");}
 
-            String add = scanner.nextLine();
+            String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
-                System.out.print("\nLastly would you like the sandwich toasted? (y/n) ");
-                String toasted = scanner.nextLine();
+                String toasted = getChoice("\nLastly would you like the sandwich toasted? (y/n) ");
                 isToasted = toasted.equalsIgnoreCase("y");
                 System.out.println("\nAwesome selection!" +
                         "\nWould you like adding anything else?");
+
                 running = false;
             }
         }while (running);
@@ -299,11 +301,10 @@ public class SandwichScreen {
         System.out.println("-- MEAT");
 
         System.out.println("\n 1. Steak \n 2. Ham \n 3. Salami \n 4. Roast Beef \n 5. Chicken \n 6. Bacon");
-        String choice;
+
         int count = 0;
         do {
-            System.out.print("\nAdd topping: ");
-            choice = scanner.nextLine();
+            String choice = getChoice("\nAdd topping: ");
             switch (choice) {
                 case "1" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.STEAK, breadSize));
                 case "2" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.HAM, breadSize));
@@ -319,7 +320,7 @@ public class SandwichScreen {
             if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
             else if (count == 1) { System.out.print(">> ");}
 
-            String add = scanner.nextLine();
+            String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
                 System.out.println("\nInteresting choices, now choose the cheese!");
                 running = false;
@@ -336,8 +337,8 @@ public class SandwichScreen {
         System.out.println("\n 1. American \n 2. Provolone \n 3. Cheddar \n 4. Swiss");
         int count = 0;
         do {
-            System.out.print("\nAdd Cheese: ");
-            String choice = scanner.nextLine();
+
+            String choice = getChoice("\nAdd Cheese: ");
             switch (choice){
                 case "1" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.AMERICAN, breadSize));
                 case "2" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.PROVOLONE, breadSize));
@@ -351,7 +352,7 @@ public class SandwichScreen {
             if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
             else if (count == 1) { System.out.print(">> ");}
 
-            String add = scanner.nextLine();
+            String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
                 System.out.println("\nInteresting choices, now choose regular toppings!");
                 running = false;
@@ -368,7 +369,7 @@ public class SandwichScreen {
             count++;
         }
         System.out.println();
-        String choice = getChoice();
+        String choice = getChoice("\nYour Choice: ");
         BreadTypes breadTypes = null;
         switch (choice) {
             case "1" -> breadTypes = BreadTypes.WHITE;
@@ -385,7 +386,7 @@ public class SandwichScreen {
     private static BreadSize getBreadSize() {
         System.out.println("--- BREAD SIZE ---");
         System.out.println("Select size: " + "\n1. 4 inch" + "\n2. 8 inch" + "\n3. 12 inch\n");
-        String sizeChoice = getChoice();
+        String sizeChoice = getChoice("\nAdd Size: ");
         BreadSize breadSize = null;
         switch (sizeChoice) {
             case "1" -> breadSize = BreadSize.FOUR_INCH;

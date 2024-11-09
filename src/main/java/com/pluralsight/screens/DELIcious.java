@@ -6,11 +6,11 @@ public class DELIcious{
 
     private static boolean running = true;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         channel();
     }
 
-    public static void channel(){
+    public static void channel() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         do {
             homeScreenMenu();
@@ -21,7 +21,9 @@ public class DELIcious{
                     running = false;
                     OrderScreen.channel();
                 }
-                case "2" -> running = false;
+                case "2" -> {
+                    System.exit(0);
+                }
                 default -> System.out.println("\nChoice not available");
             }
         }while(running);
