@@ -26,6 +26,11 @@ public class Sandwhich {
     public void addRegularTopping(RegularTopping topping){
         regularToppings.add(topping);
     }
+    public void premiumTopping(PremiumTopping topping) {premiumToppings.add(topping);}
+
+    // TODO: make topping replacing method below (bonus)
+    public void switchRegularTopping(RegularTopping topping) {}
+    public void switchPremiumTopping(PremiumTopping topping) {}
 
     public double calculateSandwichCost(){
         double toppingCost = 0;

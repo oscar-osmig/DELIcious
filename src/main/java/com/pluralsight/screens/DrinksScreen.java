@@ -2,27 +2,19 @@ package com.pluralsight.screens;
 
 import com.pluralsight.otherProducts.*;
 
-import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 
-public class AddOtherScreen {
+public class DrinksScreen {
     static Scanner scanner = new Scanner(System.in);
-    List<OtherProducts> otherProductsList = new ArrayList<>();
     static List<Drinks> drinksList = new ArrayList<>();
-    static List<Chips> chipsList = new ArrayList<>();
     private static double drinksCost;
 
     private static String getChoice(String text){
         System.out.print(text);
         return scanner.nextLine();
-    }
-
-    static void addOtherProduct() {
-
-
     }
 
     static void addDrink(){
@@ -52,15 +44,15 @@ public class AddOtherScreen {
             switch (choice){
                 case "1" -> {
                     drinksList.add(new OrangeJuice("S"));
-                    drinksCost += 1.5;
+                    drinksCost += 2;
                 }
                 case "2" -> {
                     drinksList.add(new OrangeJuice("M"));
-                    drinksCost += 1.5;
+                    drinksCost += 2.5;
                 }
                 case "3" -> {
                     drinksList.add(new OrangeJuice("L"));
-                    drinksCost += 1.5;
+                    drinksCost += 3;
                 }
                 case "0" -> {
                     running = false;
@@ -87,7 +79,9 @@ public class AddOtherScreen {
             } else if (drink instanceof OrangeJuice) {
                 System.out.println("Orange Juice: \n" +
                         "    -- Size: " + ((OrangeJuice) drink).getSize() + "\n" +
-                        "    -- Price: 1.50 \n" );
+                        "    -- Flavor: orange?..." +
+                        "    -- Calories: 80 cal" +
+                        "    -- Price: " + ((OrangeJuice) drink).getPrice() + "\n" );
 
             }
         }
@@ -143,7 +137,4 @@ public class AddOtherScreen {
         return "null";
     }
 
-    static void addShips(){
-
-    }
 }
