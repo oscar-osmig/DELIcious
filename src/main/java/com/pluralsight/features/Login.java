@@ -16,7 +16,7 @@ public class Login {
     public static boolean skipped = false;
     public static boolean registered = false;
     public static boolean foundUserName = false;
-    List<String> loggedInUserDetails = new ArrayList<>();
+    public static String[] loggedInUserDetails = new String[50];
 
     public static String getAnswer(String q){
         Scanner scanner = new Scanner(System.in);
@@ -73,6 +73,8 @@ public class Login {
                 List<String> askUserName = findUsername(username);
                 if (askUserName != null){
                     System.out.println(DELIcious.spacing + "* username not available *");
+                    // set array current user logged in
+                    loggedInUserDetails = askUserName.get(0).split("\\|");
                 }else {
                     String password = getAnswer(DELIcious.spacing + "Password: ");
                     // assign  6 digits id
@@ -82,9 +84,7 @@ public class Login {
                     // get today's date
                     String todaysDate = String.valueOf(LocalDate.now());
                     // write to file
-                    String userFormat = "\n" + username.trim() + "|" + userID + "|" + password.trim() + "|" + points.trim() + "|" + todaysDate + ":";
-                    bw.write(userFormat);
-                    bw.close();
+                    SaveToFile.saveCustomer(username, userID, password, points, todaysDate);
                     System.out.println("\n" + DELIcious.spacing + "Alright! let's get to the fun part!\n" +
                             DELIcious.spacing + "< Also you got 10k points >");
                     // set logging to true
@@ -125,6 +125,7 @@ public class Login {
                     return;
                 }
             }
+                loggedInUserDetails = USER.get(0).split("\\|");
                 String[] userDetails = USER.get(0).split("\\|");
                 if (userDetails[0].equalsIgnoreCase(userName.trim())) {
                     user = userDetails[0];

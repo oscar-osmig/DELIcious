@@ -1,7 +1,7 @@
 package com.pluralsight.order;
 
 import com.pluralsight.features.GenerateID;
-import com.pluralsight.features.SaveReceiptToFile;
+import com.pluralsight.features.SaveToFile;
 import com.pluralsight.otherProducts.*;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.screens.*;
@@ -73,7 +73,7 @@ public  class GenerateReceipt {
                             case "Y", "y" -> {
                                 System.out.println("\n" + DELIcious.spacing + "             * RECEIPT HAS BEEN SAVE *        \n");
                                 String delicious = receiptBanner();
-                                SaveReceiptToFile.saveReceipt(
+                                SaveToFile.saveReceipt(
                                         customerName+",\n" + delicious + ",\n" + sandwichReceipt + drinkReceipt + chipReceipt + totalCostReceipt);
                                 System.out.println("\n" + DELIcious.spacing + "Do you want to make a new order? (y/n)\n");
                                 String answer = getChoice(DELIcious.spacing + "Your Answer: ");

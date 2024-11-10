@@ -41,6 +41,7 @@ public class CancelOrder {
         Login.user = "";
         Login.userID = "";
         Login.nameSpaceDifference = "";
+        Login.loggedInUserDetails = null;
 
 
         // Checkout Screen data

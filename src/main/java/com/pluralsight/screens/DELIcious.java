@@ -27,7 +27,7 @@ public class DELIcious{
                 }
                 case null -> displaySignatureSandwich();
                 case "3" -> {
-                    CancelOrder.cancel();
+                    Login.login();
                     System.exit(0);
                 }
                 default -> System.out.println(spacing + "* Choice not available *");
