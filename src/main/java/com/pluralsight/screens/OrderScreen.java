@@ -12,18 +12,24 @@ import java.util.Scanner;
 public class OrderScreen {
     public static List<Order>  orders = new ArrayList<>();
     public static void orderScreen(){
-        System.out.println("--- ORDER SCREEN ---");
-        System.out.println("""
-                1. Add SandWhich\
-                
-                2. Add Drink\
-                
-                3. Add Chips\
-                
-                4. Checkout\
-                
-                0. Cancel Order\
-                """);
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                  ORDER SCREEN                  *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "         Customize your order below:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥪  Add Sandwich\n" +
+                DELIcious.spacing + "             2. 🥤  Add Drink\n" +
+                DELIcious.spacing + "             3. 🍟  Add Chips\n" +
+                DELIcious.spacing + "             4. 💳  Checkout\n" +
+                DELIcious.spacing + "             0. ❌  Cancel Order\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
+                DELIcious.spacing + "**************************************************\n");
         System.out.println();
     }
 
@@ -31,7 +37,7 @@ public class OrderScreen {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         orderScreen();
-        System.out.print("Your choice: ");
+        System.out.print(DELIcious.spacing + "Your choice: ");
         String choice = scanner.nextLine();
         switch (choice) {
             case "1" -> SandwichScreen.makeSandwichOrder();

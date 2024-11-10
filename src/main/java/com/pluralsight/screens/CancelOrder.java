@@ -37,7 +37,7 @@ public class CancelOrder {
         // Order Screen
         OrderScreen.orders.clear();
 
-        System.out.println(" * Order has been clear *");
+        System.out.println(DELIcious.spacing + " * Order has been clear *");
         Thread.sleep(5);
         DELIcious.channel();
 

@@ -1,2 +1,3 @@
 customers, ID, DATE ADDED
-Oscar Torres, 001, 2024-11-09
+Osmig Torres, 000001, 2024-11-09
+Maaike Van Putten, 000002, 2024-11-09

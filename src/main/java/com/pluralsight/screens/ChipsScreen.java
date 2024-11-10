@@ -21,9 +21,24 @@ public class ChipsScreen {
 
     static void addShips() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println("\n--- ORDER CHIPS --- \n 1. Sun Chips \n 2. Doritos \n 3. Back");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                  ORDER CHIPS                   *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "              Choose your preferred chips\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "              1. Sun Chips\n" +
+                DELIcious.spacing + "              2. Doritos\n" +
+                DELIcious.spacing + "              3. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Your choice: ");
+            String choice = getChoice(DELIcious.spacing + "Your choice: ");
             switch (choice){
                 case "1" -> addSunChips();
                 case "2" -> addDoritos();
@@ -34,7 +49,7 @@ public class ChipsScreen {
                     running = false;
                     OrderScreen.channel();
                 }
-                default -> System.out.println("* Please choose available option *");
+                default -> System.out.println(DELIcious.spacing + "* Please choose available option *");
 
             }
         }while (running);
@@ -43,9 +58,25 @@ public class ChipsScreen {
 
     private static void addDoritos() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println( "\n-- Doritos Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
+        System.out.println( "\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*               DORITOS SIZES                    *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "               Choose your Doritos size:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "              1. Small (S)\n" +
+                DELIcious.spacing + "              2. Medium (M)\n" +
+                DELIcious.spacing + "              3. Large (L)\n" +
+                DELIcious.spacing + "              0. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "      Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Add Size: ");
+            String choice = getChoice(DELIcious.spacing + "Add Size: ");
             switch (choice){
                 case "1" -> {
                     chipsList.add(new Doritos("Doritos", "S"));
@@ -67,9 +98,25 @@ public class ChipsScreen {
 
     private static void addSunChips() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println( "\n-- Sun Chips Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                SUN CHIPS SIZES                  *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "               Choose your Sun Chips size:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "              1. Small (S)\n" +
+                DELIcious.spacing + "              2. Medium (M)\n" +
+                DELIcious.spacing + "              3. Large (L)\n" +
+                DELIcious.spacing + "              0. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "      Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Add Size: ");
+            String choice = getChoice(DELIcious.spacing + "Add Size: ");
             switch (choice){
                 case "1" -> {
                     chipsList.add(new SunChips("Sun Chips", "S"));
@@ -88,30 +135,31 @@ public class ChipsScreen {
             }
         }while (running);
     }
+
     public static String chipReceipt = "";
     public static void printChips(List<Chips> chipsList){
         chipsCost = 0;
-        String chipReceipt = "\n------------ CHIPS ORDERED ------------\n";
+        String chipReceipt = "\n" + DELIcious.spacing + "------------ CHIPS ORDERED ------------\n";
         for (Chips chips : chipsList){
             if (chips instanceof SunChips){
-                chipReceipt += "\nChips: \n" +
-                        "    -- Name/Brand: " +((SunChips) chips).getName() + "\n" +
-                        "    -- Size: " + ((SunChips) chips).getSize() + "\n" +
-                        "    -- Price: 1.50\n";
+                chipReceipt += "\n" + DELIcious.spacing + "Chips: \n" +
+                        DELIcious.spacing + "    -- Name/Brand: " +((SunChips) chips).getName() + "\n" +
+                        DELIcious.spacing + "    -- Size: " + ((SunChips) chips).getSize() + "\n" +
+                        DELIcious.spacing + "    -- Price: 1.50\n";
                 chipsCost += 1.5;
 
 
             } else if (chips instanceof Doritos) {
-                chipReceipt += "\nChips: \n" +
-                        "    -- Name/Brand: " +((Doritos) chips).getName() + "\n" +
-                        "    -- Size: " + ((Doritos) chips).getSize() + "\n" +
-                        "    -- Price: 1.50\n";
+                chipReceipt += "\n" + DELIcious.spacing + "Chips: \n" +
+                        DELIcious.spacing + "    -- Name/Brand: " +((Doritos) chips).getName() + "\n" +
+                        DELIcious.spacing + "    -- Size: " + ((Doritos) chips).getSize() + "\n" +
+                        DELIcious.spacing + "    -- Price: 1.50\n";
                 chipsCost += 1.5;
 
             }
 
         }
-        chipReceipt += "\n---- CHIPS COST: " + chipsCost + "\n";
+        chipReceipt += "\n" + DELIcious.spacing + "---- CHIPS COST: " + chipsCost + "\n";
         System.out.println(chipReceipt);
     }
 }

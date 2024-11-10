@@ -75,26 +75,27 @@ public class SandwichScreen {
                 --------------------------------
          */
         for (int i = 0; i < sandwhiches.size(); i++){
-            System.out.print("\n              ------         Sandwich " + (i+1) + "      ------             \n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Toasted: " + (sandwhiches.get(i).isToasted() ? "    Yes\n" : "    No\n") +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Bread Type: " + sandwhiches.get(i).getBreadType() + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Bread Size: " + sandwhiches.get(i).getSize() + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Premium Toppings:" + "\n" +
-                         "    -- Meats: " + "\n" + "             " + getMeat(i) + "\n" +
-                         "    -- Cheese: " + "\n" + "             " + getCheeses(i) + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Regular Toppings: " + "\n" + "             " + printRegularToppings(i) + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Sauce: " + "\n" + "             " + printSauce(i) + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Side" + "\n" + "             " + printSide(i) + "\n" +
-                         "-----------------------------------------------------------------\n" +
-                         "    -- Total: " + printTotal(i) + "\n" +
-                         "-----------------------------------------------------------------\n\n");
+            System.out.print("\n" +
+                    DELIcious.spacing + "              ------         Sandwich " + (i+1) + "      ------             \n" +
+                    DELIcious.spacing + "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Toasted: " + (sandwhiches.get(i).isToasted() ? "    Yes\n" : "    No\n") +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Bread Type: " + sandwhiches.get(i).getBreadType() + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Bread Size: " + sandwhiches.get(i).getSize() + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Premium Toppings:" + "\n" +
+                    DELIcious.spacing +      "    -- Meats: " + "\n" + DELIcious.spacing + "             " + getMeat(i) + "\n" +
+                    DELIcious.spacing +      "    -- Cheese: " + "\n" + DELIcious.spacing + "             " + getCheeses(i) + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Regular Toppings: " + "\n" + DELIcious.spacing + "             " + printRegularToppings(i) + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Sauce: " + "\n" + DELIcious.spacing + "             " + printSauce(i) + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Side" + "\n" +DELIcious.spacing +  "             " + printSide(i) + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n" +
+                    DELIcious.spacing +      "    -- Total: " + printTotal(i) + "\n" +
+                    DELIcious.spacing +      "-----------------------------------------------------------------\n\n");
 
         }
 
@@ -219,14 +220,33 @@ public class SandwichScreen {
         boolean running = true;
         List<RegularTopping> regularToppings = new ArrayList<>();
 
-        System.out.println("--- REGULAR TOPPING ---");
-        System.out.println("\n 1. Cucumber \n 2. Pepper \n 3. Onions \n 4. Lettuce \n 5. Tomatoes \n 6. Jalapenos" +
-                "\n 7. Pickles \n 8. Guacamole \n 9. Mushrooms");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                REGULAR TOPPINGS                *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "               Choose your regular toppings:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥒 Cucumber\n" +
+                DELIcious.spacing + "             2. 🌶 Pepper\n" +
+                DELIcious.spacing + "             3. 🧅 Onions\n" +
+                DELIcious.spacing + "             4. 🥬 Lettuce\n" +
+                DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
+                DELIcious.spacing + "             6. 🌶 Jalapenos\n" +
+                DELIcious.spacing + "             7. 🥒 Pickles\n" +
+                DELIcious.spacing + "             8. 🥑 Guacamole\n" +
+                DELIcious.spacing + "             9. 🍄 Mushrooms\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
 
         int count = 0;
         do {
 
-            String choice = getChoice("\nAdd topping: ");
+            String choice = getChoice(DELIcious.spacing + "Add topping: ");
             switch (choice) {
                 case "1" -> regularToppings.add(new RegularTopping(RegularToppingName.CUCUMBERS));
                 case "2" -> regularToppings.add(new RegularTopping(RegularToppingName.PEPPERS));
@@ -238,16 +258,16 @@ public class SandwichScreen {
                 case "8" -> regularToppings.add(new RegularTopping(RegularToppingName.GUACAMOLE));
                 case "9" -> regularToppings.add(new RegularTopping(RegularToppingName.MUSHROOMS));
                 default -> {
-                    System.out.println("Please choice a valid option");
+                    System.out.println(DELIcious.spacing + "* Please choice a valid option *");
                     continue;
                 }
             }
-            if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
-            else if (count == 1) { System.out.print(">> ");}
+            if (count == 0) { System.out.print(DELIcious.spacing + "Press <enter> to keep adding or / to stop adding >>  "); count++;}
+            else if (count == 1) { System.out.print(DELIcious.spacing + ">> ");}
 
             String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
-                System.out.println("\nInteresting choices, now choose the sauce!");
+                System.out.println(DELIcious.spacing + "Interesting choices, now choose the sauce!");
                 getSauce(regularToppings);
                 running = false;
             }
@@ -258,15 +278,33 @@ public class SandwichScreen {
 
     private static void getSauce(List<RegularTopping> regularToppings) {
         boolean running = true;
-        System.out.println("-- SAUCE");
-        System.out.println("\n 1. Mayo \n 2. Mustard \n 3. Ketchup \n 4. Ranch \n 5. Thousand Island " +
-                "\n 6. Vinaigrette \n 7. Au Jus (side) \n 8. sauce (side)");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                    SAUCES                      *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "             Choose your sauce:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥄 Mayo\n" +
+                DELIcious.spacing + "             2. 🧂 Mustard\n" +
+                DELIcious.spacing + "             3. 🍅 Ketchup\n" +
+                DELIcious.spacing + "             4. 🥗 Ranch\n" +
+                DELIcious.spacing + "             5. 🏝 Thousand Island\n" +
+                DELIcious.spacing + "             6. 🍋 Vinaigrette\n" +
+                DELIcious.spacing + "             7. 🍲 Au Jus (side)\n" +
+                DELIcious.spacing + "             8. 🍶 Sauce (side)\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
 
         int count = 0;
 
         do {
 
-            String choice = getChoice("\nAdd Sauce: ");
+            String choice = getChoice(DELIcious.spacing + "Add Sauce: ");
             switch (choice) {
                 case "1" -> regularToppings.add(new RegularTopping(RegularToppingName.MAYO));
                 case "2" -> regularToppings.add(new RegularTopping(RegularToppingName.MUSTARD));
@@ -277,20 +315,20 @@ public class SandwichScreen {
                 case "7" -> regularToppings.add(new RegularTopping(RegularToppingName.AU_JUS));
                 case "8" -> regularToppings.add(new RegularTopping(RegularToppingName.SAUCE));
                 default -> {
-                    System.out.println("Please choice a valid option");
+                    System.out.println(DELIcious.spacing + "* Please choice a valid option *");
                     continue;
                 }
             }
 
-            if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
-            else if (count == 1) { System.out.print(">> ");}
+            if (count == 0) { System.out.print(DELIcious.spacing + "Press <enter> to keep adding or / to stop adding >>  "); count++;}
+            else if (count == 1) { System.out.print(DELIcious.spacing + ">> ");}
 
             String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
-                String toasted = getChoice("\nLastly would you like the sandwich toasted? (y/n) ");
+                String toasted = getChoice(DELIcious.spacing + "Lastly would you like the sandwich toasted? (y/n) ");
                 isToasted = toasted.equalsIgnoreCase("y");
-                System.out.println("\nAwesome selection!" +
-                        "\nWould you like adding anything else?");
+                System.out.println("\n" +DELIcious.spacing + "          * Awesome selection for a sandwich! *" + "\n" +DELIcious.spacing +
+                        "          Would you like adding anything else?");
 
                 running = false;
             }
@@ -302,14 +340,30 @@ public class SandwichScreen {
     private static List<PremiumTopping> getPremiumToppings(BreadSize breadSize){
         boolean running = true;
         List<PremiumTopping> premiumToppings = new ArrayList<>();
-        System.out.println("--- PREMIUM TOPPINGS ---");
-        System.out.println("-- MEAT");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*            PREMIUM TOPPINGS - MEAT             *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "              Select your meat topping:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥩 Steak\n" +
+                DELIcious.spacing + "             2. 🍖 Ham\n" +
+                DELIcious.spacing + "             3. 🥓 Salami\n" +
+                DELIcious.spacing + "             4. 🍖 Roast Beef\n" +
+                DELIcious.spacing + "             5. 🍗 Chicken\n" +
+                DELIcious.spacing + "             6. 🥓 Bacon\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
 
-        System.out.println("\n 1. Steak \n 2. Ham \n 3. Salami \n 4. Roast Beef \n 5. Chicken \n 6. Bacon");
 
         int count = 0;
         do {
-            String choice = getChoice("\nAdd topping: ");
+            String choice = getChoice(DELIcious.spacing + "Add topping: ");
             switch (choice) {
                 case "1" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.STEAK, breadSize));
                 case "2" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.HAM, breadSize));
@@ -318,16 +372,16 @@ public class SandwichScreen {
                 case "5" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.CHICKEN, breadSize));
                 case "6" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.BACON, breadSize));
                 default -> {
-                    System.out.println("Please choice a valid option");
+                    System.out.println(DELIcious.spacing + "* Please choice a valid option *");
                     continue;
                 }
             }
-            if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
-            else if (count == 1) { System.out.print(">> ");}
+            if (count == 0) { System.out.print(DELIcious.spacing + "Press <enter> to keep adding or / to stop adding >>  "); count++;}
+            else if (count == 1) { System.out.print(DELIcious.spacing + ">> ");}
 
             String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
-                System.out.println("\nInteresting choices, now choose the cheese!");
+                System.out.println(DELIcious.spacing + "Interesting choices, now choose the cheese!");
                 running = false;
                 getCheese(premiumToppings, breadSize);
             }
@@ -338,28 +392,44 @@ public class SandwichScreen {
 
     private static void getCheese(List<PremiumTopping> premiumToppings, BreadSize breadSize){
         boolean running = true;
-        System.out.println("-- CHEESE");
-        System.out.println("\n 1. American \n 2. Provolone \n 3. Cheddar \n 4. Swiss");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                CHEESE SELECTION                *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "                Choose your cheese:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🧀 American\n" +
+                DELIcious.spacing + "             2. 🧀 Provolone\n" +
+                DELIcious.spacing + "             3. 🧀 Cheddar\n" +
+                DELIcious.spacing + "             4. 🧀 Swiss\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
+
         int count = 0;
         do {
 
-            String choice = getChoice("\nAdd Cheese: ");
+            String choice = getChoice(DELIcious.spacing + "Add Cheese: ");
             switch (choice){
                 case "1" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.AMERICAN, breadSize));
                 case "2" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.PROVOLONE, breadSize));
                 case "3" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.CHEDDAR, breadSize));
                 case "4" -> premiumToppings.add(new PremiumTopping(PremiumToppingName.SWISS, breadSize));
                 default -> {
-                    System.out.println("Please choice a valid option");
+                    System.out.println(DELIcious.spacing + "* Please choice a valid option *");
                     continue;
                 }
             }
-            if (count == 0) { System.out.print("Press <enter> to keep adding or / to stop adding >>  "); count++;}
-            else if (count == 1) { System.out.print(">> ");}
+            if (count == 0) { System.out.print(DELIcious.spacing + "Press <enter> to keep adding or / to stop adding >>  "); count++;}
+            else if (count == 1) { System.out.print(DELIcious.spacing + ">> ");}
 
             String add = getChoice("");
             if (!add.equalsIgnoreCase("")){
-                System.out.println("\nInteresting choices, now choose regular toppings!");
+                System.out.println(DELIcious.spacing + "Interesting choices, now choose regular toppings!");
                 running = false;
             }
         }while (running);
@@ -367,31 +437,62 @@ public class SandwichScreen {
     }
 
     private static BreadTypes getBreadType() {
-        System.out.println("\n--- BREAD TYPE ---");
-        int count = 1;
-        for (BreadTypes breadType : BreadTypes.values()){
-            System.out.println( count + ". " + breadType);
-            count++;
-        }
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                   BREAD TYPE                   *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "         Please select your preferred bread:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🍞 WHITE\n" +
+                DELIcious.spacing + "             2. 🍞 WHEAT\n" +
+                DELIcious.spacing + "             3. 🍞 RYE\n" +
+                DELIcious.spacing + "             4. 🌯 WRAP\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
+//        int count = 1;
+//        for (BreadTypes breadType : BreadTypes.values()){
+//            System.out.println( count + ". " + breadType);
+//            count++;
+//        }
         System.out.println();
-        String choice = getChoice("\nYour Choice: ");
+        String choice = getChoice(DELIcious.spacing + "Your Choice: ");
         BreadTypes breadTypes = null;
         switch (choice) {
             case "1" -> breadTypes = BreadTypes.WHITE;
             case "2" -> breadTypes = BreadTypes.WHEAT;
             case "3" -> breadTypes = BreadTypes.TYE;
             case "4" -> breadTypes = BreadTypes.WRAP;
-            default -> System.out.println("Choice not available");
+            default -> System.out.println(DELIcious.spacing + "* Choice not available *");
         }
-        System.out.println("Nice! let's choose the size~");
+        System.out.println(DELIcious.spacing + "Nice! let's choose the size~");
         return breadTypes;
     }
 
 
     private static BreadSize getBreadSize() {
-        System.out.println("--- BREAD SIZE ---");
-        System.out.println("Select size: " + "\n1. 4 inch" + "\n2. 8 inch" + "\n3. 12 inch\n");
-        String sizeChoice = getChoice("\nAdd Size: ");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                   BREAD SIZE                   *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "         Please select the size of your bread:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥖 4 inch\n" +
+                DELIcious.spacing + "             2. 🥖 8 inch\n" +
+                DELIcious.spacing + "             3. 🥖 12 inch\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
+
+        String sizeChoice = getChoice(DELIcious.spacing + "Add Size: ");
         BreadSize breadSize = null;
         switch (sizeChoice) {
             case "1" -> breadSize = BreadSize.FOUR_INCH;

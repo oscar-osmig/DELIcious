@@ -22,9 +22,24 @@ public class DrinksScreen {
 
     static void addDrink() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println("\n--- ORDER DRINK --- \n 1. Soda \n 2. Orange Juice \n 3. Back");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                  ORDER DRINK                   *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "             Choose your drink:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥤 Soda\n" +
+                DELIcious.spacing + "             2. 🍊 Orange Juice\n" +
+                DELIcious.spacing + "             3. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Your choice: ");
+            String choice = getChoice(DELIcious.spacing + "Your choice: ");
             switch (choice){
                 case "1" -> addSoda();
                 case "2" -> addJuice();
@@ -36,7 +51,7 @@ public class DrinksScreen {
                     //System.out.println("Drinks total is: " + drinksCost);
                     OrderScreen.channel();
                 }
-                default -> System.out.println("* Please choose available option *");
+                default -> System.out.println(DELIcious.spacing + "* Please choose available option *");
 
             }
         }while (running);
@@ -45,9 +60,25 @@ public class DrinksScreen {
 
     private static void addJuice() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println( "\n-- Orange Juice Sizes -- \n 1. Small (S) \n 2. Medium (M) \n 3. Large (L) \n * <enter> 0 to get back * ");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*              ORANGE JUICE SIZES                *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "               Choose your Orange Juice size:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "              1. Small (S)\n" +
+                DELIcious.spacing + "              2. Medium (M)\n" +
+                DELIcious.spacing + "              3. Large (L)\n" +
+                DELIcious.spacing + "              0. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "      Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Add Size: ");
+            String choice = getChoice(DELIcious.spacing + "Add Size: ");
             switch (choice){
                 case "1" -> {
                     drinksList.add(new OrangeJuice("S"));
@@ -62,35 +93,35 @@ public class DrinksScreen {
                     running = false;
                     addDrink();
                 }
-                default -> System.out.println("* Please choose valid option *");
+                default -> System.out.println(DELIcious.spacing + "* Please choose valid option *");
             }
         }while (running);
     }
     public static String drinkReceipt = "";
     public static void printDrinks(List<Drinks> drinksList) {
         drinksCost = 0;
-        drinkReceipt = "\n------               DRINK ORDER              ------\n";
+        drinkReceipt = "\n" + DELIcious.spacing + "------               DRINK ORDER              ------\n";
         for (Drinks drink : drinksList){
             if (drink instanceof Soda){
-                drinkReceipt += "\nSoda: \n" +
-                                   "    -- Name/Brand: " +((Soda) drink).getName() + "\n" +
-                                   "    -- Size: " + ((Soda) drink).getSize() + "\n" +
-                                   "    -- Flavor: " + ((Soda) drink).getFlavor() + "\n"  +
-                                   "    -- Calories: " + ((Soda) drink).getCalories() + "\n" +
-                                   "    -- Price: " +  ((Soda) drink).getPrice() + "\n";
+                drinkReceipt +=  "\n" + DELIcious.spacing + "Soda: \n" +
+                        DELIcious.spacing + "    -- Name/Brand: " +((Soda) drink).getName() + "\n" +
+                        DELIcious.spacing + "    -- Size: " + ((Soda) drink).getSize() + "\n" +
+                        DELIcious.spacing + "    -- Flavor: " + ((Soda) drink).getFlavor() + "\n"  +
+                        DELIcious.spacing + "    -- Calories: " + ((Soda) drink).getCalories() + "\n" +
+                        DELIcious.spacing + "    -- Price: " +  ((Soda) drink).getPrice() + "\n";
                 drinksCost += ((Soda) drink).getPrice();
             } else if (drink instanceof OrangeJuice) {
-                drinkReceipt += "\nOrange Juice: \n" +
-                        "    -- Size: " + ((OrangeJuice) drink).getSize() + "\n" +
-                        "    -- Flavor: orange?..." + "\n" +
-                        "    -- Calories: 80 cal" + "\n" +
-                        "    -- Price: " + ((OrangeJuice) drink).getPrice() + "\n";
+                drinkReceipt += "\n" + DELIcious.spacing + "Orange Juice: \n" +
+                        DELIcious.spacing + "    -- Size: " + ((OrangeJuice) drink).getSize() + "\n" +
+                        DELIcious.spacing + "    -- Flavor: orange?..." + "\n" +
+                        DELIcious.spacing + "    -- Calories: 80 cal" + "\n" +
+                        DELIcious.spacing + "    -- Price: " + ((OrangeJuice) drink).getPrice() + "\n";
                 drinksCost += ((OrangeJuice) drink).getPrice();
             }
 
         }
 
-        drinkReceipt += "\n---- Drinks Cost: " + drinksCost + "\n";
+        drinkReceipt += "\n" + DELIcious.spacing + "---- Drinks Cost: " + drinksCost + "\n";
         System.out.println(drinkReceipt);
 
     }
@@ -99,12 +130,26 @@ public class DrinksScreen {
 
     static void addSoda() throws InterruptedException, IOException {
         boolean running = true;
-        System.out.println("\n--- ORDER DRINK --- \n1. Coke (original flavor, 140 cal, S M L)" +
-                "\n2. Fanta (orange flavor, 150 cal)" +
-                "\n3. Pepsi (original flavor, 180 cal)" +
-                "\n* <enter> 0 to get back * \n");
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                  ORDER DRINK                   *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "             Choose your drink:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             Available sizes: S, M, L\n" +
+                DELIcious.spacing + "       1. 🥤 Coke (Original flavor, 140 cal)\n" +
+                DELIcious.spacing + "       2. 🍊 Fanta (Orange flavor, 150 cal)\n" +
+                DELIcious.spacing + "       3. 🥤 Pepsi (Original flavor, 180 cal)\n" +
+                DELIcious.spacing + "       0. 🔙 Back\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
         do {
-            String choice = getChoice("Add Soda: ");
+            String choice = getChoice(DELIcious.spacing + "Add Soda: ");
             switch (choice){
                 case "1" -> {
                     String size = getSodaSize();
@@ -122,7 +167,7 @@ public class DrinksScreen {
                     running = false;
                     addDrink();
                 }
-                default -> System.out.println("* Please a soda in stock *");
+                default -> System.out.println(DELIcious.spacing + "* Please a soda in stock *");
             }
         }while (running);
 
@@ -130,7 +175,7 @@ public class DrinksScreen {
 
 
     public static String getSodaSize(){
-        String getSize = getChoice("Size? ");
+        String getSize = getChoice(DELIcious.spacing + "Size? ");
         if (getSize.equalsIgnoreCase("S")){
             return "S";
         } else if (getSize.equalsIgnoreCase("M")) {
@@ -138,7 +183,7 @@ public class DrinksScreen {
         } else if (getSize.equalsIgnoreCase("L")) {
             return "L";
         }else {
-            System.out.println("* Please choose right size * ");
+            System.out.println(DELIcious.spacing + "* Please choose right size * ");
             getSodaSize();
         }
         return "null";

@@ -36,47 +36,47 @@ public  class GenerateReceipt {
                  sandwiches = ((SandwichOrder) order).sandwiches;
                 //printSandwich(sandwiches);
                 orderTotalCost += totalSandwichCost;
-                System.out.println(orderTotalCost);
+                //System.out.println(orderTotalCost);
             }else if (order instanceof DrinksOrder){
                 drinks = ((DrinksOrder) order).drinks;
                 //DrinksScreen.printDrinks(drinks);
                 orderTotalCost += DrinksScreen.drinksCost;
-                System.out.println(orderTotalCost);
+                //System.out.println(orderTotalCost);
             } else if (order instanceof ChipsOrder) {
                 chips = ((ChipsOrder) order).chips;
                 //ChipsScreen.printChips(chips);
                 orderTotalCost += ChipsScreen.chipsCost;
-                System.out.println(orderTotalCost);
+                //System.out.println(orderTotalCost);
 
             }
         }
             printReceipt();
 
             if (orderTotalCost != 0) {
-                totalCostReceipt += lineDivider +
-                        "                TOTAL ORDER COST\n" +
-                        lineDivider +
-                        "                Subtotal:        $" + orderTotalCost + "\n" +
-                        "                Tax (0%):        $0 (included)\n" +
-                        lineDivider +
-                        "                GRAND TOTAL:     $" + orderTotalCost + "\n" +
-                        lineDivider +
-                        " Thank you for dining with DELIcious Sandwiches!!\n" +
-                        "===================================================\n";
-                System.out.println(totalCostReceipt);
-                customerName = getChoice("\nLastly, what's your name: ");
+                totalCostReceipt += DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "                TOTAL ORDER COST\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "                Subtotal:        $" + orderTotalCost + "\n" +
+                        DELIcious.spacing + "                Tax (0%):        $0 (included)\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "                GRAND TOTAL:     $" + orderTotalCost + "\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + " Thank you for dining with DELIcious Sandwiches!!\n" +
+                        DELIcious.spacing + "===================================================\n";
+                        System.out.println(totalCostReceipt);
+                customerName = getChoice("\n" + DELIcious.spacing + "Lastly, what's your name: ");
 
-                System.out.println("\nEnter 'Y' to confirm, 'N' to go back, and 0 to cancel order");
+                System.out.println("\n" + DELIcious.spacing + "Enter 'Y' to confirm, 'N' to go back, and 0 to cancel order");
                 do {
-                        String choice = getChoice("Confirm? ");
+                        String choice = getChoice(DELIcious.spacing + "Confirm? ");
                         switch (choice) {
                             case "Y", "y" -> {
-                                System.out.println("\n             * RECEIPT HAS BEEN SAVE *        \n");
+                                System.out.println("\n" + DELIcious.spacing + "             * RECEIPT HAS BEEN SAVE *        \n");
                                 String delicious = receiptBanner();
                                 SaveReceiptToFile.saveReceipt(
                                         customerName+",\n" + delicious + ",\n" + sandwichReceipt + drinkReceipt + chipReceipt + totalCostReceipt);
-                                System.out.println("\nDo you want to make a new order? (y/n)\n");
-                                String answer = getChoice("Your Answer: ");
+                                System.out.println("\n" + DELIcious.spacing + "Do you want to make a new order? (y/n)\n");
+                                String answer = getChoice(DELIcious.spacing + "Your Answer: ");
                                 switch (answer) {
                                     case "y", "Y" -> OrderScreen.channel();
                                     case "N", "n" -> {
@@ -87,7 +87,7 @@ public  class GenerateReceipt {
                                     case "0", "o", "O" -> {
                                         CancelOrder.cancel();
                                     }
-                                    default -> System.out.println("* Please answer valid options *");
+                                    default -> System.out.println(DELIcious.spacing + "* Please answer valid options *");
                                 }
                             }
 
@@ -97,7 +97,7 @@ public  class GenerateReceipt {
                                 CancelOrder.cancel();
                                 return;
                             }
-                            default -> System.out.println("\n * Please choose valid option * \n");
+                            default -> System.out.println("\n" + DELIcious.spacing +  "* Please choose valid option * \n");
                         }
                     } while (true);
 
@@ -121,34 +121,34 @@ public  class GenerateReceipt {
     public static String chipReceipt = "";
     public static void printChips(List<Chips> chipsList){
         ChipsScreen.chipsCost = 0;
-        chipReceipt = "\n------               SHIPS ORDER             ------\n";
+        chipReceipt = "\n" + DELIcious.spacing +  "------               SHIPS ORDER             ------\n";
         for (Chips chips : chipsList){
             if (chips instanceof SunChips){
-                chipReceipt += "    -- Chips: \n" +
-                        lineDivider +
-                        "        -- Name/Brand: " +((SunChips) chips).getName() + "\n" +
-                        lineDivider +
-                        "        -- Size: " + ((SunChips) chips).getSize() + "\n" +
-                        lineDivider +
-                        "        -- Price: 1.50\n" +
-                        lineDivider;
+                chipReceipt += DELIcious.spacing + "    -- Chips: \n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Name/Brand: " +((SunChips) chips).getName() + "\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Size: " + ((SunChips) chips).getSize() + "\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Price: 1.50\n" +
+                        DELIcious.spacing + lineDivider;
                 ChipsScreen.chipsCost = 1.5;
 
             } else if (chips instanceof Doritos) {
-                chipReceipt += "\n    -- Chips: \n" +
-                        lineDivider +
-                        "        -- Name/Brand: " +((Doritos) chips).getName() + "\n" +
-                        lineDivider +
-                        "        -- Size: " + ((Doritos) chips).getSize() + "\n" +
-                        lineDivider+
-                        "        -- Price: 1.50\n" +
-                        lineDivider;
+                chipReceipt += "\n" + DELIcious.spacing + "    -- Chips: \n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Name/Brand: " +((Doritos) chips).getName() + "\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Size: " + ((Doritos) chips).getSize() + "\n" +
+                        DELIcious.spacing + lineDivider +
+                        DELIcious.spacing + "        -- Price: 1.50\n" +
+                        DELIcious.spacing + lineDivider;
                 ChipsScreen.chipsCost = 1.5;
             }
 
         }
         System.out.println(chipReceipt);
-        chipReceipt += "    ---- CHIPS COST: " + ChipsScreen.chipsCost + "\n\n";
+        chipReceipt += DELIcious.spacing + "    ---- CHIPS COST: " + ChipsScreen.chipsCost + "\n\n";
 
 
     }
@@ -156,40 +156,40 @@ public  class GenerateReceipt {
     public static String drinkReceipt = "";
     public static void printDrinks(List<Drinks> drinksList) {
         DrinksScreen.drinksCost = 0;
-        drinkReceipt += "------               DRINK ORDER             ------\n";
+        drinkReceipt += DELIcious.spacing + "------               DRINK ORDER             ------\n";
         for (Drinks drink : drinksList){
             if (drink instanceof Soda){
                 drinkReceipt +=
-                        "    -- Soda\n" +
-                        lineDivider +
-                        "    -- Name/Brand:    " +((Soda) drink).getName() + "\n" +
-                        lineDivider +
-                        "    -- Size:          " + ((Soda) drink).getSize() + "\n" +
-                        lineDivider +
-                        "    -- Flavor:        " + ((Soda) drink).getFlavor() + "\n" +
-                        lineDivider +
-                        "    -- Calories:      " + ((Soda) drink).getCalories() + "\n" +
-                        lineDivider +
-                        "    -- Price:         " + ((Soda) drink).getPrice() + "\n" +
-                        lineDivider;
+                                DELIcious.spacing + "    -- Soda\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Name/Brand:    " +((Soda) drink).getName() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Size:          " + ((Soda) drink).getSize() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Flavor:        " + ((Soda) drink).getFlavor() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Calories:      " + ((Soda) drink).getCalories() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Price:         " + ((Soda) drink).getPrice() + "\n" +
+                                DELIcious.spacing + lineDivider;
                 DrinksScreen.drinksCost += ((Soda) drink).getPrice();
             } else if (drink instanceof OrangeJuice) {
-                drinkReceipt += "    -- Orange Juice    \n" +
-                        lineDivider +
-                        "    -- Size:          " + ((OrangeJuice) drink).getSize() + "\n" +
-                        lineDivider +
-                        "    -- Flavor:        Orange? ..." + "\n" +
-                        lineDivider +
-                        "    -- Calories:      80 cal" + "\n" +
-                        lineDivider +
-                        "    -- Price:         " + ((OrangeJuice) drink).getPrice() + "\n" +
-                        lineDivider;
+                drinkReceipt += DELIcious.spacing + "    -- Orange Juice    \n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Size:          " + ((OrangeJuice) drink).getSize() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Flavor:        Orange? ..." + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Calories:      80 cal" + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Price:         " + ((OrangeJuice) drink).getPrice() + "\n" +
+                                DELIcious.spacing + lineDivider;
                 DrinksScreen.drinksCost += ((OrangeJuice) drink).getPrice();
             }
 
         }
         System.out.println(drinkReceipt);
-        drinkReceipt += "    ---- Drinks Cost: " + DrinksScreen.drinksCost + "\n\n";
+        drinkReceipt += DELIcious.spacing + "    ---- Drinks Cost: " + DrinksScreen.drinksCost + "\n\n";
 
     }
 
@@ -199,12 +199,12 @@ public  class GenerateReceipt {
     public static String receiptBanner() throws IOException {
         orderID = GenerateOrderID.generateOrderId();
 //        orderID =  GenerateOrderID.generateOrderId();
-        delicious = "\n===================================================\n" +
-                "                  DELIcious     \n" +
-                "                 Customer Receipt\n" +
-                "===================================================\n\n" +
-                ", Date: " + date + "\n" +
-                ",Order ID " + orderID + "\n\n" ;
+        delicious = "\n" + DELIcious.spacing + "===================================================\n" +
+                           DELIcious.spacing + "                  DELIcious     \n" +
+                           DELIcious.spacing + "                 Customer Receipt\n" +
+                           DELIcious.spacing + "===================================================\n\n" +
+                           DELIcious.spacing + ", Date: " + date + "\n" +
+                           DELIcious.spacing + ",Order ID " + orderID + "\n\n" ;
         //System.out.println(orderID);
         return delicious;
     }
@@ -215,29 +215,29 @@ public  class GenerateReceipt {
         if (sandwiches != null){
             for (int i = 0; i < sandwiches.size(); i++){
                 sandwichReceipt +=
-                        lineDivider +
-                        "                 SANDWICHES ORDERED\n" +
-                        lineDivider + "\n" +
-                        "------               Sandwich " + (i+1) + "              ------\n" +
-                        lineDivider +
-                        "    -- Toasted:          " + (sandwiches.get(i).isToasted() ? "Yes \n" : "No \n") +
-                        lineDivider +
-                        "    -- Bread Type:       " + sandwiches.get(i).getBreadType() + "\n" +
-                        lineDivider +
-                        "    -- Bread Size:       " + sandwiches.get(i).getSize() + "\n" +
-                        lineDivider +
-                        "    -- Premium Toppings: \n" +
-                        "       - Meats:          " + "\n" + "             " + getMeat(i) + "\n" +
-                        "       - Cheese:         " + "\n" + "             " + getCheeses(i) + "\n" +
-                        lineDivider +
-                        "    -- Regular Toppings:\n" + "             " + printRegularToppings(i) + "\n" +
-                        lineDivider +
-                        "    -- Sauce:            " + "\n" + "             " + printSauce(i) + "\n" +
-                        lineDivider +
-                        "    -- Side:             " + "             " + printSide(i) + "\n" +
-                        lineDivider +
-                        "     -- Total:            $" + printTotal(i) + "\n" +
-                        lineDivider + "\n";
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "                 SANDWICHES ORDERED\n" +
+                                DELIcious.spacing + lineDivider + "\n" +
+                                DELIcious.spacing + "------               Sandwich " + (i+1) + "              ------\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Toasted:          " + (sandwiches.get(i).isToasted() ? "Yes \n" : "No \n") +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Bread Type:       " + sandwiches.get(i).getBreadType() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Bread Size:       " + sandwiches.get(i).getSize() + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Premium Toppings: \n" +
+                                DELIcious.spacing + "       - Meats:          " + "\n" + DELIcious.spacing + "             " + getMeat(i) + "\n" +
+                                DELIcious.spacing + "       - Cheese:         " + "\n" +  DELIcious.spacing + "             " + getCheeses(i) + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Regular Toppings:\n" + DELIcious.spacing + "             " + printRegularToppings(i) + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Sauce:            " + "\n" + DELIcious.spacing  + "             " + printSauce(i) + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "    -- Side:             " + "             " + printSide(i) + "\n" +
+                                DELIcious.spacing + lineDivider +
+                                DELIcious.spacing + "     -- Total:            $" + printTotal(i) + "\n" +
+                                DELIcious.spacing + lineDivider + "\n";
                 System.out.println(sandwichReceipt);
                 }
 

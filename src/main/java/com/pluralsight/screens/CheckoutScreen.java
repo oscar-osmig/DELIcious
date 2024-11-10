@@ -29,9 +29,9 @@ public class CheckoutScreen {
         }
 
 
-            System.out.println("\n\n* No order has been made *");
+            System.out.println(DELIcious.spacing + "* No order has been made *");
             do {
-                String startOrder = getChoice("Start order? (y/n) ");
+                String startOrder = getChoice(DELIcious.spacing + "Start order? (y/n) ");
                 switch (startOrder){
                     case "y", "Y" -> {
                         OrderScreen.channel();
@@ -41,7 +41,7 @@ public class CheckoutScreen {
                         DELIcious.channel();
                         return;
                     }
-                    default -> System.out.println("\n *Please answer valid option *");
+                    default -> System.out.println("\n " + DELIcious.spacing + "* Please answer valid option *");
                 }
             }while (true);
 
