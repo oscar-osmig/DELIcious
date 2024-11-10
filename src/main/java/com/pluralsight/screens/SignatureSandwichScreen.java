@@ -1,5 +1,8 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.sandwhich.BLTSandwhich;
+import com.pluralsight.sandwhich.ChangeBLT;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -52,6 +55,7 @@ public class SignatureSandwichScreen {
     }
 
     public static void handleBLT(){
+        BLTSandwhich bltSandwhich = new BLTSandwhich();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -74,35 +78,8 @@ public class SignatureSandwichScreen {
                 DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
                 DELIcious.spacing + "**************************************************\n");
         System.out.println();
-        askIfChanges();
+        ChangeBLT.askIfChangesBLT(bltSandwhich);
     }
 
-    private static void askIfChanges() {
-        String change = getAnswer(DELIcious.spacing + "Type the one you wish to change >>");
-        do {
-            switch (change){
-                case "1" -> changeSize();
-                case "2" -> changeMeat();
-                case "3" -> changeCheese();
-                case "4", "5", "6" -> changeRegularTopping();
-                case "7" -> changeToasted();
-                
-            }
-        }while (true);
-    }
 
-    private static void changeSize() {
-    }
-
-    private static void changeMeat() {
-    }
-
-    private static void changeCheese() {
-    }
-
-    private static void changeRegularTopping() {
-    }
-
-    private static void changeToasted() {
-    }
 }
