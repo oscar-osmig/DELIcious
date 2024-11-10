@@ -1,5 +1,6 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.Login;
 import com.pluralsight.order.GenerateReceipt;
 
 import java.io.IOException;
@@ -40,6 +41,11 @@ public class CancelOrder {
         System.out.println(DELIcious.spacing + " * Order has been clear *");
         Thread.sleep(5);
         DELIcious.channel();
+
+        // User login data
+        Login.loggedInUser = false;
+        Login.scannedCard = false;
+        Login.skipped = false;
 
     }
 }

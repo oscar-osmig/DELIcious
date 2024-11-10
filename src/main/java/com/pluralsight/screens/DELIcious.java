@@ -7,9 +7,9 @@ public class DELIcious{
 
     private static boolean running = true;
 
-    public static void main(String[] args) throws InterruptedException, IOException {
-        channel();
-    }
+//    public static void main(String[] args) throws InterruptedException, IOException {
+//        channel();
+//    }
 
     public static void channel() throws InterruptedException, IOException {
         Scanner scanner = new Scanner(System.in);
