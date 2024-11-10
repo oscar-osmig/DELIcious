@@ -33,19 +33,23 @@ public class CancelOrder {
         GenerateReceipt.chipReceipt = "";
         GenerateReceipt.drinkReceipt = "";
 
+        // User login data
+        Login.loggedInUser = false;
+        Login.scannedCard = false;
+        Login.skipped = false;
+        Login.user = "";
+        Login.userID = "";
+
         // Checkout Screen data
 
         // Order Screen
         OrderScreen.orders.clear();
 
-        System.out.println(DELIcious.spacing + " * Order has been clear *");
+        System.out.println(DELIcious.spacing + " * Thank you for visiting! *");
         Thread.sleep(5);
         DELIcious.channel();
 
-        // User login data
-        Login.loggedInUser = false;
-        Login.scannedCard = false;
-        Login.skipped = false;
+
 
     }
 }

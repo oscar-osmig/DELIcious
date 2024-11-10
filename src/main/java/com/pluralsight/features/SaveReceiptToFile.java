@@ -23,7 +23,7 @@ public class SaveReceiptToFile {
         bw.close();
 
     }
-    String customerFolderPath = "com/pluralsight/customers/customers.txt/";
+    String customerFolderPath = "com/pluralsight/customers/usernames.txt/";
     public static void saveCustomer(){
 
     }

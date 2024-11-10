@@ -5,18 +5,19 @@ import java.util.Scanner;
 public class LoginScreen {
 
     public static void loginScreen(){
-        System.out.println(
-                        DELIcious.spacing + "╔══════════════════════════════════════════╗ " +
-                        DELIcious.spacing + "║              DELIcious Login             ║" +
-                        DELIcious.spacing + "║                                          ║" +
-                        DELIcious.spacing + "║           1. Scan customer card          ║" +
-                        DELIcious.spacing + "║           2. Username login              ║" +
-                        DELIcious.spacing + "║           3. Skip login                  ║" +
-                        DELIcious.spacing + "║           0. Close                       ║" +
-                        DELIcious.spacing + "║                                          ║" +
-                        DELIcious.spacing + "║ Please select an option and press Enter  ║" +
-                        DELIcious.spacing + "╚══════════════════════════════════════════╝" +
-                        DELIcious.spacing + "────────────────────────────────────────────");
+        System.out.println("\n" +
+                        DELIcious.spacing + "╔══════════════════════════════════════════╗" + "\n" +
+                        DELIcious.spacing + "║              DELIcious Login             ║" + "\n" +
+                        DELIcious.spacing + "║                                          ║" + "\n" +
+                        DELIcious.spacing + "║           1. Scan customer card          ║" + "\n" +
+                        DELIcious.spacing + "║           2. Username login              ║" + "\n" +
+                        DELIcious.spacing + "║           3. Create account              ║" + "\n" +
+                        DELIcious.spacing + "║           4. Skip login                  ║" + "\n" +
+                        DELIcious.spacing + "║           0. Exit                        ║" + "\n" +
+                        DELIcious.spacing + "║                                          ║" + "\n" +
+                        DELIcious.spacing + "║ Please select an option and press Enter  ║" + "\n" +
+                        DELIcious.spacing + "╚══════════════════════════════════════════╝" + "\n" +
+                        DELIcious.spacing + "────────────────────────────────────────────" + "\n" );
 
     }
 

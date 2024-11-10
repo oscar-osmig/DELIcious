@@ -1,5 +1,7 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.Login;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -28,7 +30,7 @@ public class DELIcious{
                     CancelOrder.cancel();
                     System.exit(0);
                 }
-                default -> System.out.println("\nChoice not available");
+                default -> System.out.println(spacing + "* Choice not available *");
             }
         }while(running);
     }
@@ -40,16 +42,8 @@ public class DELIcious{
     }
     public static String spacing = "                                                         ";
     private static void homeScreenMenu() {
-
-        System.out.println("\n" +
-
-                spacing + "**************************************************\n" +
-                spacing + "*                                                *\n" +
-                spacing + "*          WELCOME TO DELIcious SANDWICHES       *\n" +
-                spacing + "*                                                *\n" +
-                spacing + "**************************************************\n" +
-                spacing + "       Fresh Ingredients, Made Just for You!      \n" +
-                spacing + "--------------------------------------------------\n" +
+        String welcome = welcomeSign();
+        System.out.println( welcome +
                 "\n" +
                 spacing + "         Please select an option below:\n" +
                 "\n" +
@@ -61,6 +55,35 @@ public class DELIcious{
                 spacing + "--------------------------------------------------\n" +
                 spacing + "   Enter your choice and press Enter to continue\n" +
                 spacing + "**************************************************\n");
+
+    }
+
+    public static String welcomeSign(){
+        String user = Login.user;
+        if (Login.loggedInUser == true) {
+            return "\n" +
+                    spacing + "**************************************************\n" +
+                    spacing + "*                                                *\n" +
+                    spacing + "             WELCOME BACK " + user + "!               \n" +
+                    spacing + "*                       TO                       *\n" +
+                    spacing + "*               DELIcious SANDWICHES             *\n" +
+                    spacing + "*                                                *\n" +
+                    spacing + "**************************************************\n" +
+                    spacing + "       Fresh Ingredients, Made Just for You!      \n" +
+                    spacing + "--------------------------------------------------\n" ;
+
+        }
+            return "\n" +
+
+                    spacing + "**************************************************\n" +
+                    spacing + "*                                                *\n" +
+                    spacing + "*          WELCOME TO DELIcious SANDWICHES       *\n" +
+                    spacing + "*                                                *\n" +
+                    spacing + "**************************************************\n" +
+                    spacing + "       Fresh Ingredients, Made Just for You!      \n" +
+                    spacing + "--------------------------------------------------\n" ;
+
+
 
     }
 
