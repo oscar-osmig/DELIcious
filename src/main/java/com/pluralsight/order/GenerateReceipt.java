@@ -1,6 +1,6 @@
 package com.pluralsight.order;
 
-import com.pluralsight.features.GenerateOrderID;
+import com.pluralsight.features.GenerateID;
 import com.pluralsight.features.SaveReceiptToFile;
 import com.pluralsight.otherProducts.*;
 import com.pluralsight.sandwhich.Sandwhich;
@@ -197,8 +197,8 @@ public  class GenerateReceipt {
     public static String delicious = "";
     public static String orderID = "";
     public static String receiptBanner() throws IOException {
-        orderID = GenerateOrderID.generateOrderId();
-//        orderID =  GenerateOrderID.generateOrderId();
+        orderID = GenerateID.generateOrderId();
+//        orderID =  GenerateID.generateOrderId();
         delicious = "\n" + DELIcious.spacing + "===================================================\n" +
                            DELIcious.spacing + "                  DELIcious     \n" +
                            DELIcious.spacing + "                 Customer Receipt\n" +

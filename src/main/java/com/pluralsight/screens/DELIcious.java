@@ -60,11 +60,11 @@ public class DELIcious{
 
     public static String welcomeSign(){
         String user = Login.user;
-        if (Login.loggedInUser == true) {
+        if (Login.loggedInUser == true || Login.registered == true) {
             return "\n" +
                     spacing + "**************************************************\n" +
                     spacing + "*                                                *\n" +
-                    spacing + "             WELCOME BACK " + user + "!               \n" +
+                    spacing + "*               WELCOME BACK " + user + "        *\n" +
                     spacing + "*                       TO                       *\n" +
                     spacing + "*               DELIcious SANDWICHES             *\n" +
                     spacing + "*                                                *\n" +
@@ -73,18 +73,28 @@ public class DELIcious{
                     spacing + "--------------------------------------------------\n" ;
 
         }
+            if (Login.skipped) {
+                return "\n" +
+
+                        spacing + "**************************************************\n" +
+                        spacing + "*                                                *\n" +
+                        spacing + "*          WELCOME TO DELIcious SANDWICHES       *\n" +
+                        spacing + "*                                                *\n" +
+                        spacing + "**************************************************\n" +
+                        spacing + "       Fresh Ingredients, Made Just for You!      \n" +
+                        spacing + "--------------------------------------------------\n";
+
+            }
+
             return "\n" +
 
-                    spacing + "**************************************************\n" +
-                    spacing + "*                                                *\n" +
-                    spacing + "*          WELCOME TO DELIcious SANDWICHES       *\n" +
-                    spacing + "*                                                *\n" +
-                    spacing + "**************************************************\n" +
-                    spacing + "       Fresh Ingredients, Made Just for You!      \n" +
-                    spacing + "--------------------------------------------------\n" ;
-
-
-
+                spacing + "**************************************************\n" +
+                spacing + "*                                                *\n" +
+                spacing + "*          WELCOME TO DELIcious SANDWICHES       *\n" +
+                spacing + "*                                                *\n" +
+                spacing + "**************************************************\n" +
+                spacing + "       Fresh Ingredients, Made Just for You!      \n" +
+                spacing + "--------------------------------------------------\n";
     }
 
 }
