@@ -1,0 +1,69 @@
+
+              ------         Sandwich 1      ------             
+-----------------------------------------------------------------
+    -- Toasted:     No
+-----------------------------------------------------------------
+    -- Bread Type: WHITE
+-----------------------------------------------------------------
+    -- Bread Size: FOUR_INCH
+-----------------------------------------------------------------
+    -- Premium Toppings:
+    -- Meats: 
+             STEAK
+    -- Cheese: 
+             CHEDDAR
+-----------------------------------------------------------------
+    -- Regular Toppings: 
+             PEPPERS, MUSTARD
+-----------------------------------------------------------------
+    -- Sauce: 
+             MUSTARD
+-----------------------------------------------------------------
+    -- Side
+             
+-----------------------------------------------------------------
+    -- Total: 9.5
+-----------------------------------------------------------------
+
+
+------------ DRINKS ORDERED ------------
+
+Soda: 
+    -- Name/Brand: Coke
+    -- Size: S
+    -- Flavor: Original
+    -- Calories: 140
+    -- Price: 2.0
+
+---- Drinks Cost: 2.0
+
+------------ DRINKS ORDERED ------------
+
+Soda: 
+    -- Name/Brand: Coke
+    -- Size: S
+    -- Flavor: Original
+    -- Calories: 140
+    -- Price: 2.0
+
+---- Drinks Cost: 2.0
+null
+------------ CHIPS ORDERED ------------
+
+Chips: 
+    -- Name/Brand: Sun Chips
+    -- Size: S
+    -- Price: 1.50
+
+---- CHIPS COST: 1.5
+
+------------ CHIPS ORDERED ------------
+
+Chips: 
+    -- Name/Brand: Sun Chips
+    -- Size: S
+    -- Price: 1.50
+
+---- CHIPS COST: 1.5
+null
+         ---- TOTAL ORDER COST: 13.0 ----          

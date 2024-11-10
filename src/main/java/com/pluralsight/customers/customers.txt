@@ -1,0 +1,2 @@
+customers, ID, DATE ADDED
+Oscar Torres, 001, 2024-11-09

@@ -5,6 +5,7 @@ import com.pluralsight.otherProducts.Chips;
 import com.pluralsight.otherProducts.Drinks;
 import com.pluralsight.sandwhich.Sandwhich;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class OrderScreen {
         System.out.println();
     }
 
-    public static void channel() throws InterruptedException {
+    public static void channel() throws InterruptedException, IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         orderScreen();
@@ -49,7 +50,7 @@ public class OrderScreen {
         }
     }
 
-    public static void cancelOrder() throws InterruptedException {
+    public static void cancelOrder() throws InterruptedException, IOException {
         DELIcious.channel();
     }
 

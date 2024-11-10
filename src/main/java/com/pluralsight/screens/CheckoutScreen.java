@@ -6,6 +6,7 @@ import com.pluralsight.otherProducts.Chips;
 import com.pluralsight.otherProducts.Drinks;
 import com.pluralsight.sandwhich.Sandwhich;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class CheckoutScreen {
     }
 
 
-    static void checkOut(List<Order> orders) throws InterruptedException {
+    static void checkOut(List<Order> orders) throws InterruptedException, IOException {
 
         //System.out.println(order);
         if (!orders.isEmpty()) {

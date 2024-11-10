@@ -4,6 +4,7 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
+import com.pluralsight.order.GenerateReceipt;
 import com.pluralsight.order.Order;
 import com.pluralsight.order.SandwichOrder;
 import com.pluralsight.otherProducts.OtherProducts;
@@ -11,6 +12,7 @@ import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,7 +28,7 @@ public class SandwichScreen {
         return scanner.nextLine();
     }
 
-    public static void makeSandwichOrder() throws InterruptedException {
+    public static void makeSandwichOrder() throws InterruptedException, IOException {
 
         BreadTypes breadTypes = getBreadType();
         //System.out.println(breadTypes);
@@ -49,6 +51,7 @@ public class SandwichScreen {
         printSandwich(sandwhiches);
         OrderScreen.orders.add(new SandwichOrder(sandwhiches));
         //System.out.println(OrderScreen.orders);
+        //System.out.println("Sandwich total is: " + totalSandwichCost);
         OrderScreen.channel();
 
     }
@@ -95,6 +98,7 @@ public class SandwichScreen {
 
         }
 
+
     }
 
     public static String printSide(int i) {
@@ -104,7 +108,7 @@ public class SandwichScreen {
         for(RegularTopping topping : premiumToppings){
             if (topping.getRegularTopping().getType().equals("side")){
                 sides.append(topping.getRegularTopping().toString()).append(", ");
-                if (counter == 5){
+                if (counter == 4){
                     sides.append("\n             ");
                     counter = 0;
                 }
@@ -125,7 +129,7 @@ public class SandwichScreen {
         for(RegularTopping topping : premiumToppings){
             if (topping.getRegularTopping().getType().equals("sauce")){
                 sauces.append(topping.getRegularTopping().toString()).append(", ");
-                if (counter == 5){
+                if (counter == 4){
                     sauces.append("\n             ");
                     counter = 0;
                 }
@@ -140,6 +144,7 @@ public class SandwichScreen {
     }
 
     public static double printTotal(int i) {
+        totalSandwichCost = 0;
         totalSandwichCost += sandwhiches.get(i).calculateSandwichCost();
         return sandwhiches.get(i).calculateSandwichCost();
 
@@ -150,7 +155,7 @@ public class SandwichScreen {
         StringBuilder regular = new StringBuilder();
         int counter = 1;
         for(RegularTopping topping : premiumToppings){
-            if (counter == 5){
+            if (counter == 4){
                 regular.append("\n             ");
                 counter = 0;
             }
@@ -174,7 +179,7 @@ public class SandwichScreen {
         for(PremiumTopping topping : premiumToppings){
             if (topping.getPremiumTopping().getType().equals("cheese")){
                 cheeses.append(topping.getPremiumTopping().toString()).append(", ");
-                if (counter == 5){
+                if (counter == 4){
                     cheeses.append("\n             ");
                     counter = 0;
                 }
@@ -195,7 +200,7 @@ public class SandwichScreen {
          for(PremiumTopping topping : premiumToppings){
              if (topping.getPremiumTopping().getType().equals("meat")){
                  toppings.append(topping.getPremiumTopping().toString()).append(", ");
-                 if (counter == 5){
+                 if (counter == 4){
                      toppings.append("\n             ");
                      counter = 0;
                  }

@@ -1,0 +1,13 @@
+null
+------------ DRINKS ORDERED ------------
+
+Soda: 
+    -- Name/Brand: Coke
+    -- Size: M
+    -- Flavor: Original
+    -- Calories: 140
+    -- Price: 2.5
+
+---- Drinks Cost: 2.0
+nullnull
+         ---- TOTAL ORDER COST: 2.0 ----          

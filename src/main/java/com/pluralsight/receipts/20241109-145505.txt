@@ -1,0 +1,26 @@
+---- ORDER ID #0
+
+------------ CHIPS ORDERED ------------
+
+Chips: 
+    -- Name/Brand: Sun Chips
+    -- Size: M
+    -- Price: 1.50
+
+Chips: 
+    -- Name/Brand: Doritos
+    -- Size: L
+    -- Price: 1.50
+
+---- CHIPS COST: 1.5
+--------------------------------------------------
+
+                   TOTAL ORDER COST
+---------------------------------------------------
+                  Subtotal:        $3.0
+                  Tax (0%):        $0 (included)
+---------------------------------------------------
+                  GRAND TOTAL:     $3.0
+---------------------------------------------------
+ Thank you for dining with DELIcious Sandwiches!!
+===================================================

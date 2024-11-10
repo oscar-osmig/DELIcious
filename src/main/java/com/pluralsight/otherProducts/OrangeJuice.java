@@ -15,16 +15,14 @@ public class OrangeJuice extends Drinks{
         this.size = size;
     }
 
-    public double getPrice(){
-        if (this.size.equalsIgnoreCase("S")){
-            return 2.0;
-        } else if (this.size.equalsIgnoreCase("M")) {
-            return 2.50;
-        } else if (this.size.equalsIgnoreCase("L")) {
-            return 3.0;
-        }else {
-            return 0;
-        }
+    public double getPrice() {
+        return switch (size.toUpperCase()) {
+            case "S" -> 2.0;
+            case "M" -> 2.5;
+            case "L" -> 3.0;
+            default -> 0.0;
+        };
+
     }
 
     @Override
