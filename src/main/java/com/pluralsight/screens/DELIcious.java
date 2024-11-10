@@ -25,7 +25,7 @@ public class DELIcious{
                     running = false;
                     OrderScreen.channel();
                 }
-                case null -> displaySignatureSandwich();
+                case "2" -> SignatureSandwichScreen.orderSignature();
                 case "3" -> {
                     Login.login();
                     System.exit(0);
@@ -33,9 +33,6 @@ public class DELIcious{
                 default -> System.out.println(spacing + "* Choice not available *");
             }
         }while(running);
-    }
-
-    private static void displaySignatureSandwich() {
     }
 
     private static void displayMenu() {
