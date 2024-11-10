@@ -5,7 +5,6 @@ import com.pluralsight.features.SaveReceiptToFile;
 import com.pluralsight.otherProducts.*;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.screens.*;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -15,7 +14,8 @@ import static com.pluralsight.screens.SandwichScreen.*;
 
 
 public  class GenerateReceipt {
-    public static String customerName;
+    public static String customerName = "";
+
     private static String getChoice(String text){
         Scanner scanner = new Scanner(System.in);
         System.out.print(text);
@@ -85,7 +85,7 @@ public  class GenerateReceipt {
                                         return;
                                     }
                                     case "0", "o", "O" -> {
-                                        OrderScreen.cancelOrder();
+                                        CancelOrder.cancel();
                                     }
                                     default -> System.out.println("* Please answer valid options *");
                                 }
@@ -94,7 +94,7 @@ public  class GenerateReceipt {
                             case "n", "N" -> OrderScreen.channel();
                             case "0", "o", "O" -> {
                                 Thread.sleep(5);
-                                DELIcious.channel();
+                                CancelOrder.cancel();
                                 return;
                             }
                             default -> System.out.println("\n * Please choose valid option * \n");

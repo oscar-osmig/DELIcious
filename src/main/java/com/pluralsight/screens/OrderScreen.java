@@ -4,7 +4,6 @@ import com.pluralsight.order.Order;
 import com.pluralsight.otherProducts.Chips;
 import com.pluralsight.otherProducts.Drinks;
 import com.pluralsight.sandwhich.Sandwhich;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,16 +42,11 @@ public class OrderScreen {
                 System.exit(0);
             }
             case "0" -> {
-                System.out.println("\n * Order cleared * \n");
+                CancelOrder.cancel();
                 Thread.sleep(2);
                 DELIcious.channel();
             }
         }
     }
-
-    public static void cancelOrder() throws InterruptedException, IOException {
-        DELIcious.channel();
-    }
-
 
 }

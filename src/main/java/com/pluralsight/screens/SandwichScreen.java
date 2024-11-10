@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 public class SandwichScreen {
     public static List<Sandwhich> sandwhiches = new ArrayList<>();
-    private static boolean isToasted = false;
+    static boolean isToasted = false;
     public static double totalSandwichCost = 0;
 
     private static String getChoice(String txt){
