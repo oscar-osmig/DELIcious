@@ -1,0 +1,7 @@
+from:
+      C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious>
+do:
+    1.javac -d out @sources.txt
+      - if sources.txt not found do this:
+         dir /S /B src\main\java\com\pluralsight\*.java > sources.txt
+    2. java -cp out com.pluralsight.features.<class> (features package where i have my main() method)
