@@ -4,11 +4,10 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
 import com.pluralsight.order.DrinksOrder;
+import com.pluralsight.order.GenerateReceipt;
+import com.pluralsight.order.Order;
 import com.pluralsight.order.SandwichOrder;
-import com.pluralsight.screens.DELIcious;
-import com.pluralsight.screens.OrderScreen;
-import com.pluralsight.screens.SandwichScreen;
-import com.pluralsight.screens.SignatureSandwichScreen;
+import com.pluralsight.screens.*;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
 import com.pluralsight.toppings.Topping;
@@ -50,11 +49,13 @@ public class ChangeBLT {
                 case "7" -> changeToasted(bltSandwhich);
                 case "8" -> {
                     run = false;
+                   GenerateReceipt.orderTotalCost += bltSandwhich.calculateSandwichCost();
                     SandwichScreen.sandwhiches.add(bltSandwhich);
                     SandwichOrder sandwichOrder = new SandwichOrder(SandwichScreen.sandwhiches);
                     OrderScreen.orders.add(sandwichOrder);
+                    CheckoutScreen.checkOut(OrderScreen.orders);
                     //System.out.println(OrderScreen.orders);
-                    SignatureSandwichScreen.orderSignature();
+                    //OrderScreen.channel();
                 }
                 default -> System.out.println(DELIcious.spacing + "* Please choose available options *");
             }

@@ -33,7 +33,7 @@ public  class GenerateReceipt {
 
         for (Order order : orders){
             if (order instanceof SandwichOrder){
-                 sandwiches = ((SandwichOrder) order).sandwiches;
+                 sandwiches = SandwichOrder.sandwiches;
                 //printSandwich(sandwiches);
                 orderTotalCost += totalSandwichCost;
                 //System.out.println(orderTotalCost);

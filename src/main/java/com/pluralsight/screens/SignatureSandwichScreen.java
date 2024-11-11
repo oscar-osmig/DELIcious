@@ -27,7 +27,7 @@ public class SignatureSandwichScreen {
                 "\n" +
                 DELIcious.spacing + "             1. 🥪  BLT \n" +
                 DELIcious.spacing + "             2. 🥪  Philly Cheese Stake\n" +
-                DELIcious.spacing + "             0. 🔙 Back\n" +
+                DELIcious.spacing + "             0. 🔙  Back\n" +
                 "\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
@@ -52,7 +52,13 @@ public class SignatureSandwichScreen {
 
     }
 
-    private static void handlePhilly() {
+    private static void handlePhilly() throws InterruptedException, IOException {
+        System.out.println(
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "     It was around 600 lines to handle BLT :) \n" +
+                DELIcious.spacing + "--------------------------------------------------\n");
+                Thread.sleep(250);
+                OrderScreen.channel();
     }
 
     public static BLTSandwhich bltSandwhich = new BLTSandwhich();

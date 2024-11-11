@@ -46,7 +46,7 @@ public class OrderScreen {
                 CheckoutScreen.checkOut(orders);
                 System.exit(0);
             }
-            case "0" -> {
+            case "0", "x", "X" -> {
                 CancelOrder.cancel();
                 Thread.sleep(2);
                 DELIcious.channel();

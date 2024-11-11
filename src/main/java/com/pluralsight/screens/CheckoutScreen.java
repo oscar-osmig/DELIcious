@@ -20,7 +20,7 @@ public class CheckoutScreen {
     }
 
 
-    static void checkOut(List<Order> orders) throws InterruptedException, IOException {
+    public static void checkOut(List<Order> orders) throws InterruptedException, IOException {
 
         //System.out.println(order);
         if (!orders.isEmpty()) {
