@@ -41,7 +41,7 @@ public class ChangeBLT {
                 }
                 case "6" -> {
                     currentRegularTopping = RegularToppingName.RANCH;
-                    changeRegularTopping(bltSandwhich, currentRegularTopping);
+                    changeSauce(bltSandwhich, currentRegularTopping);
                 }
                 case "7" -> changeToasted(bltSandwhich);
                 case "8" -> SandwichScreen.sandwhiches.add(bltSandwhich);
@@ -296,54 +296,54 @@ public class ChangeBLT {
                 DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
                 DELIcious.spacing + "**************************************************\n");
 
-        List<RegularTopping> currentPremiumTopping = bltSandwhich.getRegularToppings();
+        List<RegularTopping> currentRegularToppingList = bltSandwhich.getRegularToppings();
         boolean run = true;
         do {
             String answer = getAnswer(DELIcious.spacing + "Topping >> ");
             switch (answer){
                 case "1" -> {
                     run = false;
-                    changeRegular(RegularToppingName.CUCUMBERS, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.CUCUMBERS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "2" -> {
                     run = false;
-                    changeRegular(RegularToppingName.PEPPERS, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.PEPPERS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "3" -> {
                     run = false;
-                    changeRegular(RegularToppingName.ONIONS, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.ONIONS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "4" -> {
                     run = false;
-                    changeRegular(RegularToppingName.LETTUCE, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.LETTUCE, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "5" -> {
                     run = false;
-                    changeRegular(RegularToppingName.TOMATOES, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.TOMATOES, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "6" -> {
                     run = false;
-                    changeRegular(RegularToppingName.JALAPENOS, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.JALAPENOS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "7" -> {
                     run = false;
-                    changeRegular(RegularToppingName.PICKLES, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.PICKLES, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "8" -> {
                     run = false;
-                    changeRegular(RegularToppingName.GUACAMOLE, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.GUACAMOLE, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
                 case "9" -> {
                     run = false;
-                    changeRegular(RegularToppingName.MUSHROOMS, currentPremiumTopping, bltSandwhich, currentRegularTopping);
+                    changeRegular(RegularToppingName.MUSHROOMS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
                     SignatureSandwichScreen.orderSignature();
                 }
 
@@ -353,17 +353,143 @@ public class ChangeBLT {
 
     }
 
+    public static void changeSauce(BLTSandwhich bltSandwhich, RegularToppingName currentRegularTopping) throws IOException, InterruptedException {
+        boolean running = true;
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                    SAUCES                      *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "             Choose your sauce:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥄 Mayo\n" +
+                DELIcious.spacing + "             2. 🧂 Mustard\n" +
+                DELIcious.spacing + "             3. 🍅 Ketchup\n" +
+                DELIcious.spacing + "             4. 🥗 Ranch\n" +
+                DELIcious.spacing + "             5. 🏝 Thousand Island\n" +
+                DELIcious.spacing + "             6. 🍋 Vinaigrette\n" +
+                DELIcious.spacing + "             7. 🍲 Au Jus (side)\n" +
+                DELIcious.spacing + "             8. 🍶 Sauce (side)\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to confirm\n" +
+                DELIcious.spacing + "**************************************************\n");
+
+        List<RegularTopping> currentRegularToppingList = bltSandwhich.getRegularToppings();
+        do {
+            String answer = getAnswer(DELIcious.spacing + "Sauce >> ");
+            switch (answer){
+                case "1" -> {
+                    running = false;
+                    changeTheSauce(RegularToppingName.MAYO,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "2" -> {
+                    running = false;
+                    changeRegular(RegularToppingName.MUSTARD,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "3" -> {
+                    running = false;
+                    changeRegular(RegularToppingName.KETCHUP,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "4" -> {
+                    running = false;
+                    changeRegular(RegularToppingName.RANCH,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "5" -> {
+                    running = false;
+                    changeRegular(RegularToppingName.THOUSAND_ISLAND,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "6" -> {
+                    running = false;
+                    changeRegular(RegularToppingName.VINAIGRETTE,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "7" -> {
+                    running = false;
+                    changeTheSauce(RegularToppingName.AU_JUS,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+                case "8" -> {
+                    running = false;
+                    changeTheSauce(RegularToppingName.SAUCE,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
+                    SignatureSandwichScreen.orderSignature();
+                }
+
+                case "0" -> SignatureSandwichScreen.orderSignature();
+            }
+
+
+        }while (running);
+    }
+
+    public static void changeTheSauce(RegularToppingName changeTo, List<RegularTopping> currentRegularTopping, BLTSandwhich bltSandwhich, RegularToppingName RegularTopping){
+        List<RegularTopping> sauceList = new ArrayList<>();
+        //System.out.println(bltSandwhich.getRegularToppings());
+        //System.out.println(RegularTopping);
+        for (RegularTopping topping : currentRegularTopping){
+            if (!topping.getRegularTopping().getType().equalsIgnoreCase("sauce")){
+                if (!topping.getRegularTopping().equals(RegularTopping))
+                    sauceList.add(topping);
+            }
+        }
+        //System.out.println(sauceList);
+
+        if (changeTo.equals(RegularToppingName.MAYO)){
+            sauceList.add(new RegularTopping(RegularToppingName.MAYO));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.MUSTARD)){
+            sauceList.add(new RegularTopping(RegularToppingName.MUSTARD));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.KETCHUP)){
+            sauceList.add(new RegularTopping(RegularToppingName.KETCHUP));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.RANCH)){
+            sauceList.add(new RegularTopping(RegularToppingName.RANCH));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.THOUSAND_ISLAND)){
+            sauceList.add(new RegularTopping(RegularToppingName.THOUSAND_ISLAND));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.VINAIGRETTE)){
+            sauceList.add(new RegularTopping(RegularToppingName.VINAIGRETTE));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.AU_JUS)){
+            sauceList.add(new RegularTopping(RegularToppingName.PICKLES));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        else if (changeTo.equals(RegularToppingName.SAUCE)){
+            sauceList.add(new RegularTopping(RegularToppingName.SAUCE));
+            bltSandwhich.setRegularToppings(sauceList);
+        }
+        //System.out.println(sauceList);
+
+    }
+
+
+
     private static void changeRegular(RegularToppingName changeTo, List<RegularTopping> currentPremiumTopping, BLTSandwhich bltSandwhich, RegularToppingName currentRegularTopping) {
         List<RegularTopping> regularToppingList = new ArrayList<>();
         //RegularToppingName addToo = RegularToppingName.NONE;
-        System.out.println(currentRegularTopping);
+        //System.out.println(currentRegularTopping);
         for (RegularTopping topping : currentPremiumTopping){
-            if (!topping.getRegularTopping().getType().equalsIgnoreCase("sauce")){
+            if (!topping.getRegularTopping().getType().equalsIgnoreCase("regular")){
                 if (!topping.getRegularTopping().equals(currentRegularTopping))
                      regularToppingList.add(topping);
             }
         }
-        System.out.println(regularToppingList);
+        //System.out.println(regularToppingList);
         if (changeTo.equals(RegularToppingName.CUCUMBERS)){
             regularToppingList.add(new RegularTopping(RegularToppingName.CUCUMBERS));
             bltSandwhich.setRegularToppings(regularToppingList);
