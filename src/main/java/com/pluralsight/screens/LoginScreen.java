@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LoginScreen {
 
     public static void loginScreen(){
-        System.out.println("\n" +
+        System.out.println("\n" + "" +
                         DELIcious.spacing + "╔══════════════════════════════════════════╗" + "\n" +
                         DELIcious.spacing + "║              DELIcious Login             ║" + "\n" +
                         DELIcious.spacing + "║                                          ║" + "\n" +

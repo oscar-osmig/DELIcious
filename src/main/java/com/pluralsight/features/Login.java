@@ -34,6 +34,7 @@ public class Login {
             switch (answer){
                 case "1" -> {
                     scannedCard = true;
+                    // TODO: clear screen after moving to next screen ( ClearScreen.clearConsole)
                     scanCard();
                 }
                 case "2" -> {
