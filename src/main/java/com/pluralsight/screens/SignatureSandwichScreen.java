@@ -52,12 +52,12 @@ public class SignatureSandwichScreen {
 
     }
 
-    private static void handlePhilly() throws InterruptedException, IOException {
+    public static void handlePhilly() throws InterruptedException, IOException {
         System.out.println(
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "     It was around 600 lines to handle BLT :) \n" +
                 DELIcious.spacing + "--------------------------------------------------\n");
-                Thread.sleep(250);
+                Thread.sleep(500);
                 OrderScreen.channel();
     }
 

@@ -1,6 +1,7 @@
 package com.pluralsight.screens;
 
 import com.pluralsight.features.Login;
+import com.pluralsight.sandwhich.ChangeBLT;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -9,9 +10,11 @@ public class DELIcious{
 
     private static boolean running = true;
 
-//    public static void main(String[] args) throws InterruptedException, IOException {
-//        channel();
-//    }
+    private static String getChoice(String text){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(text);
+        return scanner.nextLine();
+    }
 
     public static void channel() throws InterruptedException, IOException {
         Scanner scanner = new Scanner(System.in);
@@ -35,8 +38,66 @@ public class DELIcious{
         }while(running);
     }
 
-    private static void displayMenu() {
+    private static void displayMenu() throws IOException, InterruptedException {
+
+        System.out.println("\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "                   MAIN MENU" +
+                DELIcious.spacing + "--------------------------------------------------\n\n" +
+
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*                1. BLT SANDWICH                 *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "       Ingredients for this sandwich below:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥖 8 inch\n" +
+                DELIcious.spacing + "             2. 🥓 Bacon\n" +
+                DELIcious.spacing + "             3. 🧀 Cheddar\n" +
+                DELIcious.spacing + "             4. 🥬 Lettuce\n" +
+                DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
+                DELIcious.spacing + "             6. 🥗 Ranch\n" +
+                DELIcious.spacing + "             7. 🥪 Toasted\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
+                DELIcious.spacing + "**************************************************\n\n"+
+
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "*             2. PHILLY CHEESE STAKE             *\n" +
+                DELIcious.spacing + "*                                                *\n" +
+                DELIcious.spacing + "**************************************************\n" +
+                DELIcious.spacing + "       Ingredients for this sandwich below:\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                "\n" +
+                DELIcious.spacing + "             1. 🥖 8 inch\n" +
+                DELIcious.spacing + "             2. 🥓 Bacon\n" +
+                DELIcious.spacing + "             3. 🧀 Cheddar\n" +
+                DELIcious.spacing + "             4. 🥬 Lettuce\n" +
+                DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
+                DELIcious.spacing + "             6. 🥗 Ranch\n" +
+                DELIcious.spacing + "             7. 🥪 Toasted\n" +
+                "\n" +
+                DELIcious.spacing + "--------------------------------------------------\n" +
+                DELIcious.spacing + "             Enter 0 to get back\n" +
+                DELIcious.spacing + "**************************************************\n"
+        );
+        running = true;
+        do {
+            String choice = getChoice(spacing + "Your choice >> ");
+            switch (choice){
+                case "1" -> SignatureSandwichScreen.handleBLT();
+                case "2" -> SignatureSandwichScreen.handlePhilly();
+                case "0" -> DELIcious.channel();
+                default -> System.out.println(spacing + "* please choose available option *");
+            }
+        }while (running);
+
     }
+
     public static String spacing = "                                                         ";
     private static void homeScreenMenu() {
         String welcome = welcomeSign();

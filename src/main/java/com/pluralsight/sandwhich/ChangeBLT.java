@@ -57,6 +57,7 @@ public class ChangeBLT {
                     //System.out.println(OrderScreen.orders);
                     //OrderScreen.channel();
                 }
+                case "0" -> DELIcious.channel();
                 default -> System.out.println(DELIcious.spacing + "* Please choose available options *");
             }
         }while (run);
