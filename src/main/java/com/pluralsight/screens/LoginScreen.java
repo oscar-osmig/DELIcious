@@ -1,10 +1,13 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
+
 import java.util.Scanner;
 
 public class LoginScreen {
 
     public static void loginScreen(){
+        ClearScreen.clearConsole();
         System.out.println("\n" + "" +
                         DELIcious.spacing + "╔══════════════════════════════════════════╗" + "\n" +
                         DELIcious.spacing + "║              DELIcious Login             ║" + "\n" +

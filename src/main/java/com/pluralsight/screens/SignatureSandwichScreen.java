@@ -1,5 +1,6 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.sandwhich.BLTSandwhich;
 import com.pluralsight.sandwhich.ChangeBLT;
 
@@ -16,6 +17,7 @@ public class SignatureSandwichScreen {
     }
 
     static void displaySignatureSandwich() {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -40,9 +42,16 @@ public class SignatureSandwichScreen {
         do {
             String choice = getAnswer(DELIcious.spacing + "Your choice: ");
             switch (choice){
-                case "1" -> handleBLT();
-                case "2" -> handlePhilly();
+                case "1" -> {
+                    ClearScreen.clearConsole();
+                    handleBLT();
+                }
+                case "2" -> {
+                    ClearScreen.clearConsole();
+                    handlePhilly();
+                }
                 case "0" -> {
+                    ClearScreen.clearConsole();
                     DELIcious.channel();
                     System.exit(0);
                 }
@@ -57,12 +66,13 @@ public class SignatureSandwichScreen {
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "     It was around 600 lines to handle BLT :) \n" +
                 DELIcious.spacing + "--------------------------------------------------\n");
-                Thread.sleep(500);
-                OrderScreen.channel();
+                Thread.sleep(2000);
+                SignatureSandwichScreen.displaySignatureSandwich();
     }
 
     public static BLTSandwhich bltSandwhich = new BLTSandwhich();
     public static void handleBLT() throws IOException, InterruptedException {
+        ClearScreen.clearConsole();
 
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +

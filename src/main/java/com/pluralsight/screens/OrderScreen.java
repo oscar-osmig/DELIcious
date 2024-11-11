@@ -1,5 +1,6 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.order.CancelOrder;
 import com.pluralsight.order.Order;
 
@@ -39,14 +40,25 @@ public class OrderScreen {
         System.out.print(DELIcious.spacing + "Your choice: ");
         String choice = scanner.nextLine();
         switch (choice) {
-            case "1" -> SandwichScreen.makeSandwichOrder();
-            case "2" -> DrinksScreen.addDrink();
-            case "3" -> ChipsScreen.addShips();
+            case "1" -> {
+                ClearScreen.clearConsole();
+                SandwichScreen.makeSandwichOrder();
+            }
+            case "2" -> {
+                ClearScreen.clearConsole();
+                DrinksScreen.addDrink();
+            }
+            case "3" -> {
+                ClearScreen.clearConsole();
+                ChipsScreen.addShips();
+            }
             case "4" -> {
+                ClearScreen.clearConsole();
                 CheckoutScreen.checkOut(orders);
                 System.exit(0);
             }
             case "0", "x", "X" -> {
+                ClearScreen.clearConsole();
                 CancelOrder.cancel();
                 Thread.sleep(2);
                 DELIcious.channel();

@@ -7,20 +7,26 @@ import com.pluralsight.enums.RegularToppingName;
 import com.pluralsight.sandwhich.Sandwhich;
 import com.pluralsight.toppings.PremiumTopping;
 import com.pluralsight.toppings.RegularTopping;
-import com.pluralsight.toppings.Topping;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Test {
-    public static void main(String[] args) {
-        List<Topping> toppings = new ArrayList<>();
-        toppings.add(new PremiumTopping(PremiumToppingName.SWISS, BreadSize.FOUR_INCH));
-        toppings.add(new RegularTopping(RegularToppingName.VINAIGRETTE));
-
-        // use during making receipt
-        System.out.printf( " %s " , PremiumToppingName.HAM);
+    public static void main(String[] args) throws IOException {
+//        List<Topping> toppings = new ArrayList<>();
+//        toppings.add(new PremiumTopping(PremiumToppingName.SWISS, BreadSize.FOUR_INCH));
+//        toppings.add(new RegularTopping(RegularToppingName.VINAIGRETTE));
+//
+//        // use during making receipt
+//        System.out.printf( " %s " , PremiumToppingName.HAM);
 
 //        if (toppings.get(1) instanceof RegularTopping){
 //            System.out.println(toppings.getFirst());
@@ -50,10 +56,33 @@ public class Test {
                 Total: %s
                 --------------------------------
          */
+        writeReceiptToFile();
         System.out.println();
 
 
 
+    }
+
+    public static void writeReceiptToFile() throws IOException {
+        String date = String.valueOf(LocalDate.now());
+        String time = String.valueOf(LocalTime.now().truncatedTo(ChronoUnit.SECONDS)); // hhmmssml -> hhmmss (took away mlsecs)
+        // default format  yyyy-MM-dddd
+        System.out.println(date);
+        System.out.println(time);
+
+        date = date.replace("-", ""); // take - away
+        time = time.replace(":", ""); // take : away
+        // Capstone format  yyyyMMdddd
+        System.out.println(date);
+        // Capstone format  HHMMSS
+        System.out.println(time);
+        // yyyyMMdddd-HHMMSS.txt
+        System.out.println(date + "-" + time + ".txt");
+        String file = date + "-" + time + ".txt";// combining the way the capstone asked
+        String folder = "src/main/java/com/pluralsight/receipts/"; // folder to save the file path from (content root)
+        BufferedWriter bw = new BufferedWriter(new FileWriter(folder+ file)); // path where to write the file and file name
+        bw.write(file); // instead of writing the file name, pass in the receipt format
+        bw.close(); // needs to close after done
     }
 
     public static void makeSandwich(){

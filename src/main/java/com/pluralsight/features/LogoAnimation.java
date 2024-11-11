@@ -10,9 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class LogoAnimation {
 
     public static void playLogo() throws InterruptedException, IOException {
-
         String[] frames = {
-                DELIcious.spacing + "o    .    .    .    .    .\n",
+                DELIcious.spacing +         "o    .    .    .    .    .\n",
                 DELIcious.spacing +         ".  o .    .    .    .    .\n",
                 DELIcious.spacing +         ".    o    .    .    .    .\n",
                 DELIcious.spacing +         ".    .  o .    .    .    .\n",
@@ -64,7 +63,7 @@ public class LogoAnimation {
 
         for (int i = 0; i < 1; i++){
             for (String frame : frames){
-                System.out.println(frame);
+                System.out.println("\n\n\n\n\n" +frame);
                 TimeUnit.MILLISECONDS.sleep(119);
                 ClearScreen.clearConsole();
             }

@@ -1,5 +1,6 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.order.DrinksOrder;
 import com.pluralsight.order.Order;
 import com.pluralsight.otherProducts.*;
@@ -21,6 +22,7 @@ public class DrinksScreen {
     }
 
     static void addDrink() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -59,6 +61,7 @@ public class DrinksScreen {
     }
 
     private static void addJuice() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -99,6 +102,7 @@ public class DrinksScreen {
     }
     public static String drinkReceipt = "";
     public static void printDrinks(List<Drinks> drinksList) {
+        ClearScreen.clearConsole();
         drinksCost = 0;
         drinkReceipt = "\n" + DELIcious.spacing + "------               DRINK ORDER              ------\n";
         for (Drinks drink : drinksList){
@@ -129,6 +133,7 @@ public class DrinksScreen {
 
 
     static void addSoda() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +

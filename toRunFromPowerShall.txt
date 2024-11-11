@@ -1,5 +1,6 @@
 from:
       C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious>
+      dir /S /B src\main\java\com\pluralsight\*.java > sources.txt
 do:
     1.javac -d out @sources.txt
       - if sources.txt not found do this:

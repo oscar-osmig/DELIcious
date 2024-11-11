@@ -4,6 +4,7 @@ import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.BreadTypes;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.order.GenerateReceipt;
 import com.pluralsight.order.Order;
 import com.pluralsight.order.SandwichOrder;
@@ -57,6 +58,7 @@ public class SandwichScreen {
     }
 
     public static void printSandwich(List<Sandwhich> sandwhiches) {
+        ClearScreen.clearConsole();
         /*                --- DElIcious ---
         sandwich:
                 Bread Type:  %s %s %s %s
@@ -217,6 +219,7 @@ public class SandwichScreen {
 
 
     private static List<RegularTopping> getRegularToppings(BreadSize breadSize) {
+        ClearScreen.clearConsole();
         boolean running = true;
         List<RegularTopping> regularToppings = new ArrayList<>();
 
@@ -277,6 +280,7 @@ public class SandwichScreen {
     }
 
     private static void getSauce(List<RegularTopping> regularToppings) {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -338,6 +342,7 @@ public class SandwichScreen {
 
 
     private static List<PremiumTopping> getPremiumToppings(BreadSize breadSize){
+        ClearScreen.clearConsole();
         boolean running = true;
         List<PremiumTopping> premiumToppings = new ArrayList<>();
         System.out.println("\n" +
@@ -391,6 +396,7 @@ public class SandwichScreen {
     }
 
     private static void getCheese(List<PremiumTopping> premiumToppings, BreadSize breadSize){
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -437,6 +443,7 @@ public class SandwichScreen {
     }
 
     private static BreadTypes getBreadType() {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -475,6 +482,7 @@ public class SandwichScreen {
 
 
     private static BreadSize getBreadSize() {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +

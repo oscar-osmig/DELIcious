@@ -1,6 +1,8 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.features.Login;
+import com.pluralsight.order.CancelOrder;
 import com.pluralsight.sandwhich.ChangeBLT;
 
 import java.io.IOException;
@@ -20,29 +22,41 @@ public class DELIcious{
         Scanner scanner = new Scanner(System.in);
         do {
             homeScreenMenu();
-            System.out.print(spacing+ "Your choice: ");
+            System.out.print(spacing + "Your choice: ");
             String choice = scanner.nextLine();
             switch (choice){
-                case "0" -> displayMenu();
+                case "0" -> {
+                    ClearScreen.clearConsole();
+                    displayMenu();
+                }
                 case "1" -> {
                     running = false;
+                    ClearScreen.clearConsole();
                     OrderScreen.channel();
                 }
-                case "2" -> SignatureSandwichScreen.orderSignature();
+                case "2" -> {
+                    ClearScreen.clearConsole();
+                    SignatureSandwichScreen.orderSignature();
+                }
+
                 case "3" -> {
+                    ClearScreen.clearConsole();
                     Login.login();
                     System.exit(0);
                 }
-                default -> System.out.println(spacing + "* Choice not available *");
+                default -> {
+                    ClearScreen.clearConsole();
+                    System.out.println(spacing + "* Choice not available *");
+                }
             }
         }while(running);
     }
 
     private static void displayMenu() throws IOException, InterruptedException {
-
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
-                DELIcious.spacing + "                   MAIN MENU" +
+                DELIcious.spacing + "                   MAIN MENU\n" +
                 DELIcious.spacing + "--------------------------------------------------\n\n" +
 
                 DELIcious.spacing + "**************************************************\n" +
@@ -53,13 +67,13 @@ public class DELIcious{
                 DELIcious.spacing + "       Ingredients for this sandwich below:\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 "\n" +
-                DELIcious.spacing + "             1. 🥖 8 inch\n" +
-                DELIcious.spacing + "             2. 🥓 Bacon\n" +
-                DELIcious.spacing + "             3. 🧀 Cheddar\n" +
-                DELIcious.spacing + "             4. 🥬 Lettuce\n" +
-                DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
-                DELIcious.spacing + "             6. 🥗 Ranch\n" +
-                DELIcious.spacing + "             7. 🥪 Toasted\n" +
+                DELIcious.spacing + "                🥖 8 inch\n" +
+                DELIcious.spacing + "                🥓 Bacon\n" +
+                DELIcious.spacing + "                🧀 Cheddar\n" +
+                DELIcious.spacing + "                🥬 Lettuce\n" +
+                DELIcious.spacing + "                🍅 Tomatoes\n" +
+                DELIcious.spacing + "                🥗 Ranch\n" +
+                DELIcious.spacing + "                🥪 Toasted\n" +
                 "\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
@@ -73,13 +87,13 @@ public class DELIcious{
                 DELIcious.spacing + "       Ingredients for this sandwich below:\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 "\n" +
-                DELIcious.spacing + "             1. 🥖 8 inch\n" +
-                DELIcious.spacing + "             2. 🥓 Bacon\n" +
-                DELIcious.spacing + "             3. 🧀 Cheddar\n" +
-                DELIcious.spacing + "             4. 🥬 Lettuce\n" +
-                DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
-                DELIcious.spacing + "             6. 🥗 Ranch\n" +
-                DELIcious.spacing + "             7. 🥪 Toasted\n" +
+                DELIcious.spacing + "                🥖 8 inch\n" +
+                DELIcious.spacing + "                🥓 Bacon\n" +
+                DELIcious.spacing + "                🧀 Cheddar\n" +
+                DELIcious.spacing + "                🥬 Lettuce\n" +
+                DELIcious.spacing + "                🍅 Tomatoes\n" +
+                DELIcious.spacing + "                🥗 Ranch\n" +
+                DELIcious.spacing + "                🥪 Toasted\n" +
                 "\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 DELIcious.spacing + "             Enter 0 to get back\n" +
@@ -89,18 +103,31 @@ public class DELIcious{
         do {
             String choice = getChoice(spacing + "Your choice >> ");
             switch (choice){
-                case "1" -> SignatureSandwichScreen.handleBLT();
-                case "2" -> SignatureSandwichScreen.handlePhilly();
-                case "0" -> DELIcious.channel();
-                default -> System.out.println(spacing + "* please choose available option *");
+                case "1" -> {
+                    ClearScreen.clearConsole();
+                    SignatureSandwichScreen.handleBLT();
+                }
+                case "2" -> {
+                    ClearScreen.clearConsole();
+                    SignatureSandwichScreen.handlePhilly();
+                }
+                case "0" -> {
+                    ClearScreen.clearConsole();
+                    //CancelOrder.cancel();
+                    DELIcious.channel();
+                }
+                default -> {
+                    System.out.println(spacing + "* please choose available option *");
+                }
             }
         }while (running);
 
     }
 
-    public static String spacing = "                                                         ";
+    public static String spacing = "                                                            ";
     private static void homeScreenMenu() {
         String welcome = welcomeSign();
+        ClearScreen.clearConsole();
         System.out.println( welcome +
                 "\n" +
                 spacing + "         Please select an option below:\n" +
@@ -108,7 +135,7 @@ public class DELIcious{
                 spacing + "             0. 🍽️  [MAIN MENU]\n" +
                 spacing + "             1. 🍽️  New Order\n" +
                 spacing + "             2. 🍽️  Signature\n" +
-                spacing + "             3. 🚪  Exit\n" +
+                spacing + "             3. 🚪  Log out\n" +
                 "\n" +
                 spacing + "--------------------------------------------------\n" +
                 spacing + "   Enter your choice and press Enter to continue\n" +
@@ -116,21 +143,35 @@ public class DELIcious{
 
     }
 
-    public static String welcomeSign(){
+    public static String welcomeSign() {
+        ClearScreen.clearConsole();
         String user = Login.user;
+        // TODO: add log out option if user is logged in
         if (Login.loggedInUser == true || Login.registered == true) {
-            return "\n" +
-                    spacing + "**************************************************\n" +
-                    spacing + "*                                                *\n" +
-                    spacing + "*               WELCOME BACK " + user + "        *\n" +
-                    spacing + "*                       TO                       *\n" +
-                    spacing + "*               DELIcious SANDWICHES             *\n" +
-                    spacing + "*                                                *\n" +
-                    spacing + "**************************************************\n" +
-                    spacing + "       Fresh Ingredients, Made Just for You!      \n" +
-                    spacing + "--------------------------------------------------\n" ;
 
-        }
+            if (user.length() <= "osmig torres".length()) {
+                int usernameLength = user.length();
+                int referenceLegtn = "osmig torres".length();
+                int delta = referenceLegtn - usernameLength;
+                if (delta != 0) {
+                    for (int i = 0; i < delta; i++) {
+                        Login.nameSpaceDifference += " ";
+                    }
+                    user += Login.nameSpaceDifference;
+                }
+                return "\n" +
+                        spacing + "**************************************************\n" +
+                        spacing + "*                                                *\n" +
+                        spacing + "*               WELCOME BACK " + user + "        *\n" +
+                        spacing + "*                       TO                       *\n" +
+                        spacing + "*               DELIcious SANDWICHES             *\n" +
+                        spacing + "*                                                *\n" +
+                        spacing + "**************************************************\n" +
+                        spacing + "       Fresh Ingredients, Made Just for You!      \n" +
+                        spacing + "--------------------------------------------------\n";
+
+            }
+
             if (Login.skipped) {
                 return "\n" +
 
@@ -144,7 +185,8 @@ public class DELIcious{
 
             }
 
-            return "\n" +
+        }
+        return "\n" +
 
                 spacing + "**************************************************\n" +
                 spacing + "*                                                *\n" +
@@ -154,5 +196,4 @@ public class DELIcious{
                 spacing + "       Fresh Ingredients, Made Just for You!      \n" +
                 spacing + "--------------------------------------------------\n";
     }
-
 }

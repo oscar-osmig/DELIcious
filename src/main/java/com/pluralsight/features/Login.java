@@ -7,6 +7,7 @@ import java.io.*;
 import java.lang.ref.Cleaner;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -46,9 +47,11 @@ public class Login {
                     registereNewCustomer();
                 }
                 case "4" -> {
+                    ClearScreen.clearConsole();
                     DELIcious.channel();
                 }
                 case "0" -> {
+                    ClearScreen.clearConsole();
                     return;
                 }
             }
@@ -74,6 +77,7 @@ public class Login {
 
                 List<String> askUserName = findUsername(username);
                 if (askUserName != null){
+                    ClearScreen.clearConsole();
                     System.out.println(DELIcious.spacing + "* username not available *");
                     // set array current user logged in
                     loggedInUserDetails = askUserName.get(0).split("\\|");
@@ -87,6 +91,7 @@ public class Login {
                     String todaysDate = String.valueOf(LocalDate.now());
                     // write to file
                     SaveToFile.saveCustomer(username, userID, password, points, todaysDate);
+                    ClearScreen.clearConsole();
                     System.out.println("\n" + DELIcious.spacing + "Alright! let's get to the fun part!\n" +
                             DELIcious.spacing + "< Also you got 10k points >");
                     // set logging to true
@@ -99,6 +104,7 @@ public class Login {
                 }
 
             }else {
+                ClearScreen.clearConsole();
                 int userLength = "osmig torres".length();
                 System.out.println(DELIcious.spacing + "* username length should be less than " +
                         DELIcious.spacing + userLength + " chars long *");
@@ -110,10 +116,13 @@ public class Login {
 
 
     public static String user = "";
+    public static String[] foundUserDetails = new String[6];
     private static void askUsernamePassword() throws IOException, InterruptedException {
+
         do {
             String userName = getAnswer("\n" + DELIcious.spacing + "Username: ");
             List<String> USER = findUsername(userName);
+            //System.out.println(USER);
             if (USER == null) {
                 String makeAccount = getAnswer("\n" + DELIcious.spacing + "Username not found. \n"
                         + DELIcious.spacing + "Would like to make an account? (y/n)");
@@ -123,17 +132,21 @@ public class Login {
                     skipped = true;
                     loggedInUser = false;
                     System.out.println("\n"+ DELIcious.spacing + "You've entered as guest!");
+                    ClearScreen.clearConsole();
                     DELIcious.channel();
                     return;
                 }
             }
-                loggedInUserDetails = USER.get(0).split("\\|");
-                String[] userDetails = USER.get(0).split("\\|");
-                if (userDetails[0].equalsIgnoreCase(userName.trim())) {
-                    user = userDetails[0];
+//             System.out.println(Arrays.toString(foundUserDetails));
+//                loggedInUserDetails = USER.get(9).split("\\|");
+//                String[] userDetails = USER.get(9).split("\\|");
+                if (foundUserDetails[0].equalsIgnoreCase(userName.trim())) {
+                    user = foundUserDetails[0];
                     String passWord = getAnswer("\n" + DELIcious.spacing + "Password: ");
-                    if (userDetails[2].trim().equalsIgnoreCase(passWord)) {
+                    if (foundUserDetails[2].trim().equalsIgnoreCase(passWord)) {
                         loggedInUser = true;
+                        user = foundUserDetails[0];
+                        ClearScreen.clearConsole();
                         DELIcious.channel();
                         return;
                     } else {
@@ -143,7 +156,7 @@ public class Login {
 
         }while (true);
     }
-
+    // TODO: check this logic
     public static List<String> findUsername(String userName) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("src/main/java/com/pluralsight/customers/usernames.txt"));
         String lines;
@@ -157,8 +170,10 @@ public class Login {
 
         for(String user : users){
             String[] userRN = user.split("\\|");
-            if (userRN[0].equalsIgnoreCase(userName)){
+            if (userRN[0].equals(userName)){
+                foundUserDetails = userRN.clone();
                 return users;
+
             }
         }
 
@@ -202,12 +217,14 @@ public class Login {
                     userID = userDetails[0];
                     user = userDetails[0];
                     loggedInUser = true;
+                    ClearScreen.clearConsole();
                     DELIcious.channel();
                     return;
                 }
             }else{
                 System.out.println("\n" + DELIcious.spacing + "An Error occurred. \n"
                         + DELIcious.spacing + "* Please login or skip login *");
+                ClearScreen.clearConsole();
                 login();
                 return;
             }

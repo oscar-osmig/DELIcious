@@ -42,6 +42,7 @@ public class CancelOrder {
         Login.skipped = false;
         Login.foundUserName = false;
         Login.user = "";
+//        Login.foundUserDetails = null;
         Login.userID = "";
         Login.nameSpaceDifference = "";
         Login.loggedInUserDetails = null;

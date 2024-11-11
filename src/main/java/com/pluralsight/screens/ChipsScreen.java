@@ -1,5 +1,6 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.order.ChipsOrder;
 import com.pluralsight.order.Order;
 import com.pluralsight.otherProducts.*;
@@ -20,6 +21,7 @@ public class ChipsScreen {
     }
 
     static void addShips() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -57,6 +59,7 @@ public class ChipsScreen {
     }
 
     private static void addDoritos() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println( "\n" +
                 DELIcious.spacing + "**************************************************\n" +
@@ -97,6 +100,7 @@ public class ChipsScreen {
     }
 
     private static void addSunChips() throws InterruptedException, IOException {
+        ClearScreen.clearConsole();
         boolean running = true;
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +

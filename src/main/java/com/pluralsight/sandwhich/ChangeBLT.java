@@ -3,6 +3,7 @@ package com.pluralsight.sandwhich;
 import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
+import com.pluralsight.features.ClearScreen;
 import com.pluralsight.order.DrinksOrder;
 import com.pluralsight.order.GenerateReceipt;
 import com.pluralsight.order.Order;
@@ -31,25 +32,41 @@ public class ChangeBLT {
         boolean run = true;
         do {
             switch (change){
-                case "1" -> changeSize(bltSandwhich);
-                case "2" -> changeMeat(bltSandwhich);
-                case "3" -> changeCheese(bltSandwhich);
+                case "1" -> {
+                    //ClearScreen.clearConsole();
+                    changeSize(bltSandwhich);
+                }
+                case "2" -> {
+                   // ClearScreen.clearConsole();
+                    changeMeat(bltSandwhich);
+                }
+                case "3" -> {
+                    //ClearScreen.clearConsole();
+                    changeCheese(bltSandwhich);
+                }
                 case "4" -> {
+                    //ClearScreen.clearConsole();
                     currentRegularTopping = RegularToppingName.LETTUCE;
                     changeRegularTopping(bltSandwhich, currentRegularTopping);
                 }
                 case "5" -> {
+                    //ClearScreen.clearConsole();
                     currentRegularTopping = RegularToppingName.TOMATOES;
                     changeRegularTopping(bltSandwhich, currentRegularTopping);
                 }
                 case "6" -> {
+                    //ClearScreen.clearConsole();
                     currentRegularTopping = RegularToppingName.RANCH;
                     changeSauce(bltSandwhich, currentRegularTopping);
                 }
-                case "7" -> changeToasted(bltSandwhich);
+                case "7" -> {
+                    //ClearScreen.clearConsole();
+                    changeToasted(bltSandwhich);
+                }
                 case "8" -> {
                     run = false;
-                   GenerateReceipt.orderTotalCost += bltSandwhich.calculateSandwichCost();
+                    ClearScreen.clearConsole();
+                    GenerateReceipt.orderTotalCost += bltSandwhich.calculateSandwichCost();
                     SandwichScreen.sandwhiches.add(bltSandwhich);
                     SandwichOrder sandwichOrder = new SandwichOrder(SandwichScreen.sandwhiches);
                     OrderScreen.orders.add(sandwichOrder);
@@ -57,13 +74,17 @@ public class ChangeBLT {
                     //System.out.println(OrderScreen.orders);
                     //OrderScreen.channel();
                 }
-                case "0" -> DELIcious.channel();
+                case "0" -> {
+                    ClearScreen.clearConsole();
+                    DELIcious.channel();
+                }
                 default -> System.out.println(DELIcious.spacing + "* Please choose available options *");
             }
         }while (run);
     }
 
     private static void changeSize(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
+       ClearScreen.clearConsole();
         System.out.println(
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "                BLT sizes below:\n" +
@@ -87,35 +108,33 @@ public class ChangeBLT {
                     BLTSandwhich.defaultSize = BreadSize.FOUR_INCH;
                     bltSandwhich.setSize(BreadSize.FOUR_INCH);
                     //System.out.println(bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                     break;
                 case "2" :
                     run = false;
                     BLTSandwhich.defaultSize = BreadSize.EIGHT_INCH;
                     bltSandwhich.setSize(BreadSize.EIGHT_INCH);
                     //System.out.println(bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
-                    break;
+                    SignatureSandwichScreen.handleBLT();
                 case "3" :
                     run = false;
                     BLTSandwhich.defaultSize = BreadSize.TWELVE_INCH;
                     bltSandwhich.setSize(BreadSize.TWELVE_INCH);
                     //System.out.println(bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
-                    break;
+                    SignatureSandwichScreen.handleBLT();
                 case "0" :
                     run = false;
-                    SignatureSandwichScreen.orderSignature();
-                    break;
+                    SignatureSandwichScreen.handleBLT();
                 default :
                     System.out.println(DELIcious.spacing + "* Please choose available option *");
-                    break;
+                    //changeSize(bltSandwhich);
             }
         }while (run);
 
     }
 
     private static void changeMeat(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -145,34 +164,34 @@ public class ChangeBLT {
                 case "1" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.STEAK, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "2" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.HAM, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "3" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.SALAMI, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "4" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.ROAST_BEEF, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "5" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.CHICKEN, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "6" -> {
                     run = false;
                     changePremiumMeat(PremiumToppingName.BACON, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
-                case "0" -> SignatureSandwichScreen.orderSignature();
+                case "0" -> SignatureSandwichScreen.handleBLT();
             }
         }while (run);
     }
@@ -210,6 +229,7 @@ public class ChangeBLT {
     }
 
     private static void changeCheese(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -238,25 +258,25 @@ public class ChangeBLT {
                 case "1" -> {
                     run = false;
                     changePremiumCheese(PremiumToppingName.AMERICAN, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "2" -> {
                     run = false;
                     changePremiumCheese(PremiumToppingName.PROVOLONE, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "3" -> {
                     run = false;
                     changePremiumCheese(PremiumToppingName.CHEDDAR, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "4" -> {
                     run = false;
                     changePremiumCheese(PremiumToppingName.SWISS, currentPremiumTopping, bltSandwhich);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
 
-                case "0" -> SignatureSandwichScreen.orderSignature();
+                case "0" -> SignatureSandwichScreen.handleBLT();
             }
         }while (run);
     }
@@ -288,6 +308,7 @@ public class ChangeBLT {
     }
 
     private static void changeRegularTopping(BLTSandwhich bltSandwhich, RegularToppingName currentRegularTopping) throws IOException, InterruptedException {
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -320,50 +341,50 @@ public class ChangeBLT {
                 case "1" -> {
                     run = false;
                     changeRegular(RegularToppingName.CUCUMBERS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "2" -> {
                     run = false;
                     changeRegular(RegularToppingName.PEPPERS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "3" -> {
                     run = false;
                     changeRegular(RegularToppingName.ONIONS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "4" -> {
                     run = false;
                     changeRegular(RegularToppingName.LETTUCE, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "5" -> {
                     run = false;
                     changeRegular(RegularToppingName.TOMATOES, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "6" -> {
                     run = false;
                     changeRegular(RegularToppingName.JALAPENOS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "7" -> {
                     run = false;
                     changeRegular(RegularToppingName.PICKLES, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "8" -> {
                     run = false;
                     changeRegular(RegularToppingName.GUACAMOLE, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "9" -> {
                     run = false;
                     changeRegular(RegularToppingName.MUSHROOMS, currentRegularToppingList, bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
 
-                case "0" -> SignatureSandwichScreen.orderSignature();
+                case "0" -> SignatureSandwichScreen.handleBLT();
             }
         }while (run);
 
@@ -371,6 +392,7 @@ public class ChangeBLT {
 
     public static void changeSauce(BLTSandwhich bltSandwhich, RegularToppingName currentRegularTopping) throws IOException, InterruptedException {
         boolean running = true;
+        ClearScreen.clearConsole();
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -400,45 +422,45 @@ public class ChangeBLT {
                 case "1" -> {
                     running = false;
                     changeTheSauce(RegularToppingName.MAYO,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "2" -> {
                     running = false;
                     changeRegular(RegularToppingName.MUSTARD,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "3" -> {
                     running = false;
                     changeRegular(RegularToppingName.KETCHUP,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "4" -> {
                     running = false;
                     changeRegular(RegularToppingName.RANCH,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "5" -> {
                     running = false;
                     changeRegular(RegularToppingName.THOUSAND_ISLAND,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "6" -> {
                     running = false;
                     changeRegular(RegularToppingName.VINAIGRETTE,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "7" -> {
                     running = false;
                     changeTheSauce(RegularToppingName.AU_JUS,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
                 case "8" -> {
                     running = false;
                     changeTheSauce(RegularToppingName.SAUCE,currentRegularToppingList ,bltSandwhich, currentRegularTopping);
-                    SignatureSandwichScreen.orderSignature();
+                    SignatureSandwichScreen.handleBLT();
                 }
 
-                case "0" -> SignatureSandwichScreen.orderSignature();
+                case "0" -> SignatureSandwichScreen.handleBLT();
             }
 
 
@@ -547,6 +569,7 @@ public class ChangeBLT {
     }
 
     private static void changeToasted(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
+        ClearScreen.clearConsole();
         System.out.println(
                         DELIcious.spacing + "**************************************************\n" +
                         DELIcious.spacing + "                   Toast BLT? \n" +
