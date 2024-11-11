@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BLTSandwhich extends Sandwhich{
+    public static BreadSize defaultSize = BreadSize.EIGHT_INCH;
     private static List<PremiumTopping> premiumToppings = new ArrayList<>(
             List.of(
-                    new PremiumTopping(PremiumToppingName.BACON, BreadSize.EIGHT_INCH),
-                    new PremiumTopping(PremiumToppingName.CHEDDAR, BreadSize.EIGHT_INCH)
+                    new PremiumTopping(PremiumToppingName.BACON, defaultSize),
+                    new PremiumTopping(PremiumToppingName.CHEDDAR, defaultSize)
             )
     );
 
@@ -28,7 +29,7 @@ public class BLTSandwhich extends Sandwhich{
 
 
     public BLTSandwhich() {
-        super(BreadSize.EIGHT_INCH, BreadTypes.WHITE, true, regularToppings, premiumToppings);
+        super(defaultSize, BreadTypes.WHITE, true, regularToppings, premiumToppings);
 
     }
 

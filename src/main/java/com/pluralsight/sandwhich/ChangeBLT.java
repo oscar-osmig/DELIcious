@@ -3,7 +3,10 @@ package com.pluralsight.sandwhich;
 import com.pluralsight.enums.BreadSize;
 import com.pluralsight.enums.PremiumToppingName;
 import com.pluralsight.enums.RegularToppingName;
+import com.pluralsight.order.DrinksOrder;
+import com.pluralsight.order.SandwichOrder;
 import com.pluralsight.screens.DELIcious;
+import com.pluralsight.screens.OrderScreen;
 import com.pluralsight.screens.SandwichScreen;
 import com.pluralsight.screens.SignatureSandwichScreen;
 import com.pluralsight.toppings.PremiumTopping;
@@ -26,6 +29,7 @@ public class ChangeBLT {
     public static RegularToppingName currentRegularTopping = RegularToppingName.NONE;
     public static void askIfChangesBLT(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
         String change = getAnswer(DELIcious.spacing + "Type the one you wish to change >> ");
+        boolean run = true;
         do {
             switch (change){
                 case "1" -> changeSize(bltSandwhich);
@@ -44,10 +48,17 @@ public class ChangeBLT {
                     changeSauce(bltSandwhich, currentRegularTopping);
                 }
                 case "7" -> changeToasted(bltSandwhich);
-                case "8" -> SandwichScreen.sandwhiches.add(bltSandwhich);
+                case "8" -> {
+                    run = false;
+                    SandwichScreen.sandwhiches.add(bltSandwhich);
+                    SandwichOrder sandwichOrder = new SandwichOrder(SandwichScreen.sandwhiches);
+                    OrderScreen.orders.add(sandwichOrder);
+                    //System.out.println(OrderScreen.orders);
+                    SignatureSandwichScreen.orderSignature();
+                }
                 default -> System.out.println(DELIcious.spacing + "* Please choose available options *");
             }
-        }while (true);
+        }while (run);
     }
 
     private static void changeSize(BLTSandwhich bltSandwhich) throws IOException, InterruptedException {
@@ -71,20 +82,23 @@ public class ChangeBLT {
             switch (size){
                 case "1" :
                     run = false;
+                    BLTSandwhich.defaultSize = BreadSize.FOUR_INCH;
                     bltSandwhich.setSize(BreadSize.FOUR_INCH);
                     //System.out.println(bltSandwhich);
                     SignatureSandwichScreen.orderSignature();
                     break;
                 case "2" :
                     run = false;
+                    BLTSandwhich.defaultSize = BreadSize.EIGHT_INCH;
                     bltSandwhich.setSize(BreadSize.EIGHT_INCH);
-                    System.out.println(bltSandwhich);
+                    //System.out.println(bltSandwhich);
                     SignatureSandwichScreen.orderSignature();
                     break;
                 case "3" :
                     run = false;
+                    BLTSandwhich.defaultSize = BreadSize.TWELVE_INCH;
                     bltSandwhich.setSize(BreadSize.TWELVE_INCH);
-                    System.out.println(bltSandwhich);
+                    //System.out.println(bltSandwhich);
                     SignatureSandwichScreen.orderSignature();
                     break;
                 case "0" :
@@ -162,7 +176,7 @@ public class ChangeBLT {
     }
 
     private static void changePremiumMeat(PremiumToppingName premiumToppingName, List<PremiumTopping> currentPremiumTopping, BLTSandwhich bltSandwhich) {
-        System.out.println(currentPremiumTopping.get(1));
+        //System.out.println(currentPremiumTopping.get(1));
         List<PremiumTopping> premiumToppingList = new ArrayList<>();
         for (PremiumTopping topping : currentPremiumTopping){
             if (!topping.getPremiumTopping().getType().equalsIgnoreCase("meat")){

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SandwichOrder extends Order{
-    List<Sandwhich> sandwiches = new ArrayList<>();
+    public static List<Sandwhich> sandwiches = new ArrayList<>();
 
     public SandwichOrder(List<Sandwhich> sandwiches) {
-        this.sandwiches = sandwiches;
+        SandwichOrder.sandwiches = sandwiches;
     }
 
     public List<Sandwhich> getSandwiches() {
@@ -16,7 +16,7 @@ public class SandwichOrder extends Order{
     }
 
     public void setSandwiches(List<Sandwhich> sandwiches) {
-        this.sandwiches = sandwiches;
+        SandwichOrder.sandwiches = sandwiches;
     }
 
     @Override
