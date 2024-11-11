@@ -1,7 +1,10 @@
-package com.pluralsight.screens;
+package com.pluralsight.order;
 
+import com.pluralsight.enums.RegularToppingName;
 import com.pluralsight.features.Login;
-import com.pluralsight.order.GenerateReceipt;
+import com.pluralsight.sandwhich.BLTSandwhich;
+import com.pluralsight.sandwhich.ChangeBLT;
+import com.pluralsight.screens.*;
 
 import java.io.IOException;
 
@@ -44,7 +47,9 @@ public class CancelOrder {
         Login.loggedInUserDetails = null;
 
 
-        // Checkout Screen data
+        // Signature sandwich data
+        SignatureSandwichScreen.bltSandwhich = new BLTSandwhich();
+        ChangeBLT.currentRegularTopping = RegularToppingName.NONE;
 
         // Order Screen
         OrderScreen.orders.clear();

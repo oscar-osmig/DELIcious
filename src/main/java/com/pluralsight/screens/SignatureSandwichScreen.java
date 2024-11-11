@@ -10,6 +10,7 @@ public class SignatureSandwichScreen {
 
     public static String getAnswer(String q){
         Scanner scanner = new Scanner(System.in);
+        System.out.print(q);
         q = scanner.nextLine();
         return q;
     }
@@ -26,7 +27,7 @@ public class SignatureSandwichScreen {
                 "\n" +
                 DELIcious.spacing + "             1. 🥪  BLT \n" +
                 DELIcious.spacing + "             2. 🥪  Philly Cheese Stake\n" +
-                DELIcious.spacing + "             0. 🚪  Exit\n\n" +
+                DELIcious.spacing + "             0. 🔙 Back\n" +
                 "\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +
                 DELIcious.spacing + "   Enter your choice and press Enter to continue\n" +
@@ -54,8 +55,9 @@ public class SignatureSandwichScreen {
     private static void handlePhilly() {
     }
 
-    public static void handleBLT(){
-        BLTSandwhich bltSandwhich = new BLTSandwhich();
+    public static BLTSandwhich bltSandwhich = new BLTSandwhich();
+    public static void handleBLT() throws IOException, InterruptedException {
+
         System.out.println("\n" +
                 DELIcious.spacing + "**************************************************\n" +
                 DELIcious.spacing + "*                                                *\n" +
@@ -71,7 +73,8 @@ public class SignatureSandwichScreen {
                 DELIcious.spacing + "             4. 🥬 Lettuce\n" +
                 DELIcious.spacing + "             5. 🍅 Tomatoes\n" +
                 DELIcious.spacing + "             6. 🥗 Ranch\n" +
-                DELIcious.spacing + "             7. 🥪 Toasted " +
+                DELIcious.spacing + "             7. 🥪 Toasted\n" +
+                DELIcious.spacing + "             8. ✅ Add to order\n" +
                 DELIcious.spacing + "             0. 🚪  Exit\n\n" +
                 "\n" +
                 DELIcious.spacing + "--------------------------------------------------\n" +

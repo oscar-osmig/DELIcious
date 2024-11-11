@@ -17,7 +17,8 @@ public enum RegularToppingName {
     KETCHUP("sauce"),
     RANCH("sauce"),
     THOUSAND_ISLAND("sauce"),
-    VINAIGRETTE("sauce");
+    VINAIGRETTE("sauce"),
+    NONE("null");
 
     private String type;
 

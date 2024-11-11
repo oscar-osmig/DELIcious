@@ -1,9 +1,8 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.order.CancelOrder;
 import com.pluralsight.order.Order;
-import com.pluralsight.otherProducts.Chips;
-import com.pluralsight.otherProducts.Drinks;
-import com.pluralsight.sandwhich.Sandwhich;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
