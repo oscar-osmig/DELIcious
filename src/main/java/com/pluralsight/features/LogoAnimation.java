@@ -73,7 +73,7 @@ public class LogoAnimation {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        playLogo();
-//        OutroAnimation.playOutro();
+//        playLogo();
+        OutroAnimation.playOutro();
     }
 }
