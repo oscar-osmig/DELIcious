@@ -124,7 +124,7 @@ public class DELIcious{
 
     }
 
-    public static String spacing = "                                                            ";
+    public static String spacing = "                                                                    ";
     private static void homeScreenMenu() {
         String welcome = welcomeSign();
         ClearScreen.clearConsole();

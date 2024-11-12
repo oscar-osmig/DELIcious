@@ -8,6 +8,7 @@ C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\GenerateID.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\Login.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\LogoAnimation.java
+C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\OutroAnimation.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\SaveToFile.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\order\CancelOrder.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\order\ChipsOrder.java

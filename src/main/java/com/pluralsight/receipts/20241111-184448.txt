@@ -1,0 +1,57 @@
+osmig,
+
+                                                                    ===================================================
+                                                                                      DELIcious     
+                                                                                     Customer Receipt
+                                                                    ===================================================
+
+                                                                    , Date: 2024-11-11
+                                                                    ,Order ID 0b64694b-3185-43e6-b18f-8fdff558578b
+
+,
+                                                                    ---------------------------------------------------
+                                                                                     SANDWICHES ORDERED
+                                                                    ---------------------------------------------------
+
+                                                                    ------               Sandwich 1              ------
+                                                                    ---------------------------------------------------
+                                                                        -- Toasted:          Yes 
+                                                                    ---------------------------------------------------
+                                                                        -- Bread Type:       WHITE
+                                                                    ---------------------------------------------------
+                                                                        -- Bread Size:       FOUR_INCH
+                                                                    ---------------------------------------------------
+                                                                        -- Premium Toppings: 
+                                                                           - Meats:          
+                                                                                 STEAK, HAM, SALAMI, ROAST_BEEF,                                                                     
+             CHICKEN, BACON
+                                                                           - Cheese:         
+                                                                                 AMERICAN, PROVOLONE, CHEDDAR, SWISS,                                                                     
+             AMERICAN, PROVOLONE
+                                                                    ---------------------------------------------------
+                                                                        -- Regular Toppings:
+                                                                                 CUCUMBERS, PEPPERS, ONIONS,                                                                     
+             LETTUCE, TOMATOES, JALAPENOS, PICKLES,                                                                     
+             GUACAMOLE, MAYO, MUSTARD, KETCHUP,                                                                     
+             RANCH, THOUSAND_ISLAND, VINAIGRETTE,                                                                     
+             MUSTARD
+                                                                    ---------------------------------------------------
+                                                                        -- Sauce:            
+                                                                                 MAYO, MUSTARD, KETCHUP, RANCH,                                                                     
+             THOUSAND_ISLAND, VINAIGRETTE, MUSTARD
+                                                                    ---------------------------------------------------
+                                                                        -- Side:                          AU_JUS, SAUCE
+                                                                    ---------------------------------------------------
+                                                                         -- Total:            $29.5
+                                                                    ---------------------------------------------------
+
+                                                                    ---------------------------------------------------
+                                                                                    TOTAL ORDER COST
+                                                                    ---------------------------------------------------
+                                                                                    Subtotal:        $29.5
+                                                                                    Tax (0%):        $0 (included)
+                                                                    ---------------------------------------------------
+                                                                                    GRAND TOTAL:     $29.5
+                                                                    ---------------------------------------------------
+                                                                     Thank you for dining with DELIcious Sandwiches!!
+                                                                    ===================================================

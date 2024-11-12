@@ -112,7 +112,7 @@ public class SandwichScreen {
             if (topping.getRegularTopping().getType().equals("side")){
                 sides.append(topping.getRegularTopping().toString()).append(", ");
                 if (counter == 4){
-                    sides.append("\n             ");
+                    sides.append("\n" + DELIcious.spacing +"        ");
                     counter = 0;
                 }
                 counter++;
@@ -133,7 +133,7 @@ public class SandwichScreen {
             if (topping.getRegularTopping().getType().equals("sauce")){
                 sauces.append(topping.getRegularTopping().toString()).append(", ");
                 if (counter == 4){
-                    sauces.append("\n             ");
+                    sauces.append( "\n" + DELIcious.spacing +"        ");
                     counter = 0;
                 }
                 counter++;
@@ -159,7 +159,7 @@ public class SandwichScreen {
         int counter = 1;
         for(RegularTopping topping : premiumToppings){
             if (counter == 4){
-                regular.append("\n             ");
+                regular.append("\n"+ DELIcious.spacing + "        ");
                 counter = 0;
             }
             if (!topping.getRegularTopping().getType().equals("side")){
@@ -183,7 +183,7 @@ public class SandwichScreen {
             if (topping.getPremiumTopping().getType().equals("cheese")){
                 cheeses.append(topping.getPremiumTopping().toString()).append(", ");
                 if (counter == 4){
-                    cheeses.append("\n             ");
+                    cheeses.append("\n"+ DELIcious.spacing + "\n        ");
                     counter = 0;
                 }
                 counter++;
@@ -204,7 +204,7 @@ public class SandwichScreen {
              if (topping.getPremiumTopping().getType().equals("meat")){
                  toppings.append(topping.getPremiumTopping().toString()).append(", ");
                  if (counter == 4){
-                     toppings.append("\n             ");
+                     toppings.append("\n" + DELIcious.spacing + "        ");
                      counter = 0;
                  }
                  counter++;
