@@ -3123,16 +3123,16 @@ public class OutroAnimation {
 
         };
 
-        //Frames per second = 262 frames / 10 seconds (desired duration) = 26.2 frames per second
-        // delay per frame = 1 / 26.2 ~ 0.038 milliseconds
+        //Frames per second = 280 frames / 10 seconds (desired duration) = 26.2 frames per second
+        // delay per frame = 1 / 28 ~ 0.038 milliseconds
 
-        System.out.println(frames.length);
+        System.out.println(DELIcious.spacing + "I manually checked " + frames.length + " frames, FPS: " + 24);
         Thread.sleep(5000);
 
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 1; i++){
             for (String frame : frames){
                 System.out.println("\n\n\n\n\n" +frame);
-                TimeUnit.MILLISECONDS.sleep(38);
+                TimeUnit.MILLISECONDS.sleep(42);
                 ClearScreen.clearConsole();
             }
         }

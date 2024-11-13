@@ -29,7 +29,7 @@ public class Login {
     public static void login() throws IOException, InterruptedException {
 
         LoginScreen.loginScreen();
-
+        boolean run = false;
         do {
             String answer = getAnswer("\n" + DELIcious.spacing + "Your answer: ");
             switch (answer){
@@ -51,11 +51,15 @@ public class Login {
                     DELIcious.channel();
                 }
                 case "0" -> {
+                    run = false;
+                    OutroAnimation.playOutro();
+                    System.out.println("\n\n\n\n\n" +DELIcious.spacing + "Good Bye :)");
+                    Thread.sleep(3000);
                     ClearScreen.clearConsole();
-                    return;
+                    System.exit(0);
                 }
             }
-        }while (true);
+        }while (run);
 
     }
     public static String nameSpaceDifference = "";
@@ -232,6 +236,7 @@ public class Login {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        LogoAnimation.playLogo();
         login();
     }
 }
