@@ -10,6 +10,10 @@ C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\LogoAnimation.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\OutroAnimation.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\SaveToFile.java
+C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\easter_egg\ArrowKeyListener.java
+C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\easter_egg\ClearConsole.java
+C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\easter_egg\GameBoard.java
+C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\features\easter_egg\WritePlayToFile.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\order\CancelOrder.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\order\ChipsOrder.java
 C:\Users\osmig\OneDrive\Desktop\pluralsight\java-development\DELIcious\src\main\java\com\pluralsight\order\DrinksOrder.java
