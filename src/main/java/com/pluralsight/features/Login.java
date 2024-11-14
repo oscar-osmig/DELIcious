@@ -53,7 +53,7 @@ public class Login {
                 case "0" -> {
                     run = false;
                     OutroAnimation.playOutro();
-                    System.out.println("\n\n\n\n\n" +DELIcious.spacing + "Good Bye :)");
+                    System.out.println(DELIcious.spacing + "Good Bye :)");
                     Thread.sleep(3000);
                     ClearScreen.clearConsole();
                     System.exit(0);
