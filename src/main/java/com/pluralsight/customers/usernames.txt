@@ -1,5 +1,5 @@
 Username|ID|Password|reward points|DATE ADDED
-Osmig Torres|000001|not mad lad|infinite|2024-11-09:
+Osmig Torres|000001|not mad lad but know meep|infinite|2024-11-09:
 Maaike Van Putten|000002|blabla lala|50000|2024-11-09:
 osmig|220896|coltkhan22!|10000|2024-11-10:
 karla|331258|karlita|10000|2024-11-10:

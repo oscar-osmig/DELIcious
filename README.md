@@ -26,7 +26,7 @@ Then they can start their orders right away.
     - [Check Out](#Check-Out)
     - [Cancel Order](#Cancel-Order)
 
-- [Interesting Code](#interesting-code)
+- [Interesting Code & favorite code](#interesting-code)
     - [Loading Screen](#Loading-Screen)
     - [Outro Animation](#Outro-Animation)
     - [Generate Receipt](#Generate-Receipt)
